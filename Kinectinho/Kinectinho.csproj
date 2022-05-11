@@ -56,6 +56,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\Jogo\TelaJogo.xaml.cs">
+      <DependentUpon>TelaJogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\TelaMenu.xaml.cs">
+      <DependentUpon>TelaMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Modo\TelaModo.xaml.cs">
+      <DependentUpon>TelaModo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Opcoes\TelaPontuacao.xaml.cs">
+      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pontuacao\TelaPontuacao.xaml.cs">
+      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +83,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Jogo\TelaJogo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="View\Menu\TelaMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="View\Modo\TelaModo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="View\Opcoes\TelaPontuacao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="View\Pontuacao\TelaPontuacao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,6 +125,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
