@@ -13,5 +13,6 @@ namespace Kinectinho
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

@@ -56,20 +56,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\Jogo\TelaJogo.xaml.cs">
-      <DependentUpon>TelaJogo.xaml</DependentUpon>
+    <Compile Include="NavButton.cs" />
+    <Compile Include="View\TelaFerramentas.xaml.cs">
+      <DependentUpon>TelaFerramentas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Menu\TelaMenu.xaml.cs">
+    <Compile Include="View\TelaMenu.xaml.cs">
       <DependentUpon>TelaMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Modo\TelaModo.xaml.cs">
-      <DependentUpon>TelaModo.xaml</DependentUpon>
+    <Compile Include="View\TelaJogo.xaml.cs">
+      <DependentUpon>TelaJogo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Opcoes\TelaPontuacao.xaml.cs">
-      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
+    <Compile Include="View\TelaMusica.xaml.cs">
+      <DependentUpon>TelaMusica.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pontuacao\TelaPontuacao.xaml.cs">
-      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
+    <Compile Include="View\TelaPontucao.xaml.cs">
+      <DependentUpon>TelaPontucao.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -83,20 +84,29 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Jogo\TelaJogo.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Menu\TelaMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="View\TelaFerramentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Modo\TelaModo.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="View\TelaMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Opcoes\TelaPontuacao.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="View\TelaJogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pontuacao\TelaPontuacao.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <Page Include="View\TelaMusica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TelaPontucao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
