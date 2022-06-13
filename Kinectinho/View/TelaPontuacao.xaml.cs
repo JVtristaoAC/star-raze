@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kinectinho.View
 {
     /// <summary>
-    /// Interação lógica para TelaPontucao.xam
+    /// Lógica interna para TelaPontuacao1.xaml
     /// </summary>
-    public partial class TelaPontucao : Page
+    public partial class TelaPontuacao1 : Window
     {
-        public TelaPontucao()
+        public TelaPontuacao1()
         {
             InitializeComponent();
         }

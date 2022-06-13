@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kinectinho.View
 {
     /// <summary>
-    /// Interação lógica para TelaFerramentas.xam
+    /// Lógica interna para Window1.xaml
     /// </summary>
-    public partial class TelaFerramentas : Page
+    public partial class Window1 : Window
     {
-        public TelaFerramentas()
+        public Window1()
         {
             InitializeComponent();
         }

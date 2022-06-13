@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kinectinho.View
 {
     /// <summary>
-    /// Interação lógica para Menu.xam
+    /// Lógica interna para TelaMenu.xaml
     /// </summary>
-    public partial class Menu : Page
+    public partial class TelaMenu : Window
     {
-        public Menu()
+        public TelaMenu()
         {
             InitializeComponent();
         }

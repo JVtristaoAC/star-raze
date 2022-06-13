@@ -248,102 +248,119 @@ namespace Kinectinho
             
        }
 
+        private void Jogar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            View.Window1 janela = new View.Window1();
+            janela.ShowDialog();
+        }
 
+        private void Configurar_Click(object sender, RoutedEventArgs e)
+        {
 
-//        /**
-//         * Desenhar o esqueleto do usuário.
-//         */
-//        void etecnect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
-//        {
-//            using (ColorImageFrame visualizacao = e.OpenColorImageFrame())
-//            {
-//                if (visualizacao == null) return;
+        }
 
-//                if (info_cores_sensor_kinect == null)
-//                    info_cores_sensor_kinect = new byte[visualizacao.PixelDataLength];
+        private void Sair_Click(object sender, RoutedEventArgs e)
+        {
 
-//                visualizacao.CopyPixelDataTo(info_cores_sensor_kinect);
-
-//                if (bmp_rgb_cores == null)
-//                {
-//                    this.bmp_rgb_cores = new WriteableBitmap(
-//                        visualizacao.Width,
-//                        visualizacao.Height,
-//                        96,
-//                        96,
-//                        PixelFormats.Bgr32,
-//                        null);
-//                }
-
-//                this.bmp_rgb_cores.WritePixels(new Int32Rect(0, 0, visualizacao.Width, visualizacao.Height), info_cores_sensor_kinect, visualizacao.Width * visualizacao.BytesPerPixel, 0);
-//                esqueletobugado.Background = new ImageBrush(bmp_rgb_cores);
-//            }
-//        }
+        }
 
 
 
-//        void etecnect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
-//        {
-//            esqueletobugado.Children.Clear();
-//            Skeleton[] esqueletos = null;
+        //        /**
+        //         * Desenhar o esqueleto do usuário.
+        //         */
+        //        void etecnect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        //        {
+        //            using (ColorImageFrame visualizacao = e.OpenColorImageFrame())
+        //            {
+        //                if (visualizacao == null) return;
 
-//            using (SkeletonFrame esqueletos_quadros_ms = e.OpenSkeletonFrame())
-//            {
-//                if (esqueletos_quadros_ms != null)
-//                {
-//                    esqueletos = new Skeleton[esqueletos_quadros_ms.SkeletonArrayLength];
-//                    esqueletos_quadros_ms.CopySkeletonDataTo(esqueletos);
-//                }
-//            }
+        //                if (info_cores_sensor_kinect == null)
+        //                    info_cores_sensor_kinect = new byte[visualizacao.PixelDataLength];
 
-//            if (esqueletos == null) return;
+        //                visualizacao.CopyPixelDataTo(info_cores_sensor_kinect);
 
-//            foreach (Skeleton esqueleto in esqueletos)
-//            {
-//                if (esqueleto.TrackingState == SkeletonTrackingState.Tracked)
-//                {
-                    
-//                    Joint handJoint = esqueleto.Joints[JointType.HandRight];
-//                    Joint elbowJoint = esqueleto.Joints[JointType.ElbowRight];
-//                    bones_esqueleto(esqueleto.Joints[JointType.Head], esqueleto.Joints[JointType.ShoulderCenter]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.Spine]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.Spine], esqueleto.Joints[JointType.HipCenter]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.HipCenter], esqueleto.Joints[JointType.HipLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.HipLeft], esqueleto.Joints[JointType.KneeLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.KneeLeft], esqueleto.Joints[JointType.AnkleLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.AnkleLeft], esqueleto.Joints[JointType.FootLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.HipCenter], esqueleto.Joints[JointType.HipRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.HipRight], esqueleto.Joints[JointType.KneeRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.KneeRight], esqueleto.Joints[JointType.AnkleRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.AnkleRight], esqueleto.Joints[JointType.FootRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.ShoulderLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderLeft], esqueleto.Joints[JointType.ElbowLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ElbowLeft], esqueleto.Joints[JointType.WristLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.WristLeft], esqueleto.Joints[JointType.HandLeft]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.ShoulderRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderRight], esqueleto.Joints[JointType.ElbowRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.ElbowRight], esqueleto.Joints[JointType.WristRight]);
-//                    bones_esqueleto(esqueleto.Joints[JointType.WristRight], esqueleto.Joints[JointType.HandRight]);
-                    
-//                }
-//            }
-//        }
+        //                if (bmp_rgb_cores == null)
+        //                {
+        //                    this.bmp_rgb_cores = new WriteableBitmap(
+        //                        visualizacao.Width,
+        //                        visualizacao.Height,
+        //                        96,
+        //                        96,
+        //                        PixelFormats.Bgr32,
+        //                        null);
+        //                }
+
+        //                this.bmp_rgb_cores.WritePixels(new Int32Rect(0, 0, visualizacao.Width, visualizacao.Height), info_cores_sensor_kinect, visualizacao.Width * visualizacao.BytesPerPixel, 0);
+        //                esqueletobugado.Background = new ImageBrush(bmp_rgb_cores);
+        //            }
+        //        }
 
 
 
-//        void bones_esqueleto(Joint j1, Joint j2)
-//        {
-//            Line esp_bones_esqueleto = new Line();
-//            esp_bones_esqueleto.Stroke = new SolidColorBrush(Colors.Purple);
-//            esp_bones_esqueleto.StrokeThickness = 5;
-//            ColorImagePoint j1P = kinect.CoordinateMapper.MapSkeletonPointToColorPoint(j1.Position, ColorImageFormat.RgbResolution640x480Fps30);
-//            esp_bones_esqueleto.X1 = j1P.X;
-//            esp_bones_esqueleto.Y1 = j1P.Y;
-//            ColorImagePoint j2P = kinect.CoordinateMapper.MapSkeletonPointToColorPoint(j2.Position, ColorImageFormat.RgbResolution640x480Fps30);
-//            esp_bones_esqueleto.X2 = j2P.X;
-//            esp_bones_esqueleto.Y2 = j2P.Y;
+        //        void etecnect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
+        //        {
+        //            esqueletobugado.Children.Clear();
+        //            Skeleton[] esqueletos = null;
 
-//            esqueletobugado.Children.Add(esp_bones_esqueleto);
-          //}
-  }
+        //            using (SkeletonFrame esqueletos_quadros_ms = e.OpenSkeletonFrame())
+        //            {
+        //                if (esqueletos_quadros_ms != null)
+        //                {
+        //                    esqueletos = new Skeleton[esqueletos_quadros_ms.SkeletonArrayLength];
+        //                    esqueletos_quadros_ms.CopySkeletonDataTo(esqueletos);
+        //                }
+        //            }
+
+        //            if (esqueletos == null) return;
+
+        //            foreach (Skeleton esqueleto in esqueletos)
+        //            {
+        //                if (esqueleto.TrackingState == SkeletonTrackingState.Tracked)
+        //                {
+
+        //                    Joint handJoint = esqueleto.Joints[JointType.HandRight];
+        //                    Joint elbowJoint = esqueleto.Joints[JointType.ElbowRight];
+        //                    bones_esqueleto(esqueleto.Joints[JointType.Head], esqueleto.Joints[JointType.ShoulderCenter]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.Spine]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.Spine], esqueleto.Joints[JointType.HipCenter]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.HipCenter], esqueleto.Joints[JointType.HipLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.HipLeft], esqueleto.Joints[JointType.KneeLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.KneeLeft], esqueleto.Joints[JointType.AnkleLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.AnkleLeft], esqueleto.Joints[JointType.FootLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.HipCenter], esqueleto.Joints[JointType.HipRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.HipRight], esqueleto.Joints[JointType.KneeRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.KneeRight], esqueleto.Joints[JointType.AnkleRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.AnkleRight], esqueleto.Joints[JointType.FootRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.ShoulderLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderLeft], esqueleto.Joints[JointType.ElbowLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ElbowLeft], esqueleto.Joints[JointType.WristLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.WristLeft], esqueleto.Joints[JointType.HandLeft]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderCenter], esqueleto.Joints[JointType.ShoulderRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ShoulderRight], esqueleto.Joints[JointType.ElbowRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.ElbowRight], esqueleto.Joints[JointType.WristRight]);
+        //                    bones_esqueleto(esqueleto.Joints[JointType.WristRight], esqueleto.Joints[JointType.HandRight]);
+
+        //                }
+        //            }
+        //        }
+
+
+
+        //        void bones_esqueleto(Joint j1, Joint j2)
+        //        {
+        //            Line esp_bones_esqueleto = new Line();
+        //            esp_bones_esqueleto.Stroke = new SolidColorBrush(Colors.Purple);
+        //            esp_bones_esqueleto.StrokeThickness = 5;
+        //            ColorImagePoint j1P = kinect.CoordinateMapper.MapSkeletonPointToColorPoint(j1.Position, ColorImageFormat.RgbResolution640x480Fps30);
+        //            esp_bones_esqueleto.X1 = j1P.X;
+        //            esp_bones_esqueleto.Y1 = j1P.Y;
+        //            ColorImagePoint j2P = kinect.CoordinateMapper.MapSkeletonPointToColorPoint(j2.Position, ColorImageFormat.RgbResolution640x480Fps30);
+        //            esp_bones_esqueleto.X2 = j2P.X;
+        //            esp_bones_esqueleto.Y2 = j2P.Y;
+
+        //            esqueletobugado.Children.Add(esp_bones_esqueleto);
+        //}
+    }
 }

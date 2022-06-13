@@ -56,21 +56,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="NavButton.cs" />
-    <Compile Include="View\TelaFerramentas.xaml.cs">
-      <DependentUpon>TelaFerramentas.xaml</DependentUpon>
+    <Compile Include="View\TelaJogo.xaml.cs">
+      <DependentUpon>TelaJogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TelaMenu.xaml.cs">
       <DependentUpon>TelaMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaJogo.xaml.cs">
-      <DependentUpon>TelaJogo.xaml</DependentUpon>
+    <Compile Include="View\TelaFerramentas.xaml.cs">
+      <DependentUpon>TelaFerramentas.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TelaMusica.xaml.cs">
       <DependentUpon>TelaMusica.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaPontucao.xaml.cs">
-      <DependentUpon>TelaPontucao.xaml</DependentUpon>
+    <Compile Include="View\TelaPontuacao.xaml.cs">
+      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,7 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\TelaFerramentas.xaml">
+    <Page Include="View\TelaJogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,7 +95,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TelaJogo.xaml">
+    <Page Include="View\TelaFerramentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,7 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TelaPontucao.xaml">
+    <Page Include="View\TelaPontuacao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

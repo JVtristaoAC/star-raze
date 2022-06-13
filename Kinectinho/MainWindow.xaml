@@ -12,8 +12,11 @@
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <WrapPanel>
-            <Button Navv
-        </WrapPanel>
-        </Grid>
+        <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Left" Margin="358,217,0,0" VerticalAlignment="Top" Height="36" Width="84" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
+        <Button Content="Configurações" x:Name="Configurar" HorizontalAlignment="Left" Margin="327,274,0,0" VerticalAlignment="Top" Height="36" Width="146" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Configurar_Click"/>
+        <Button Content="Sair" x:Name="Sair" HorizontalAlignment="Left" Margin="358,334,0,0" VerticalAlignment="Top" Height="36" Width="84" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Sair_Click"/>
+       
+        <Label Content="Kinect tema do jogo" HorizontalAlignment="Left" Margin="70,56,0,0" VerticalAlignment="Top" FontSize="72" Grid.ColumnSpan="2" Width="660"/>
+
+    </Grid>
 </Window>

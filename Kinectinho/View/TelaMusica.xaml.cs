@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kinectinho.View
 {
     /// <summary>
-    /// Interação lógica para TelaMusica.xam
+    /// Lógica interna para TelaMusica1.xaml
     /// </summary>
-    public partial class TelaMusica : Page
+    public partial class TelaMusica1 : Window
     {
-        public TelaMusica()
+        public TelaMusica1()
         {
             InitializeComponent();
         }
