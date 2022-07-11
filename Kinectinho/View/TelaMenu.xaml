@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
-        Title="TelaMenu" Height="450" Width="800">
+        Title="Seleção do Jogo" Height="720" Width="1280">
     <Grid>
-        
+       
     </Grid>
+
+
 </Window>

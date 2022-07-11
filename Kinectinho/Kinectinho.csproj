@@ -56,20 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\TelaJogo.xaml.cs">
-      <DependentUpon>TelaJogo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaMenu.xaml.cs">
-      <DependentUpon>TelaMenu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\TelaFerramentas.xaml.cs">
       <DependentUpon>TelaFerramentas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaMusica.xaml.cs">
-      <DependentUpon>TelaMusica.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaPontuacao.xaml.cs">
-      <DependentUpon>TelaPontuacao.xaml</DependentUpon>
+    <Compile Include="View\TelaMenu.xaml.cs">
+      <DependentUpon>TelaMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -87,23 +78,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\TelaJogo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TelaMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\TelaFerramentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TelaMusica.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TelaPontuacao.xaml">
+    <Page Include="View\TelaMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,6 +116,7 @@
   <ItemGroup>
     <Folder Include="DAO\" />
     <Folder Include="Model\" />
+    <Folder Include="View\Dancas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

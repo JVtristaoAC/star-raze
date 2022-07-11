@@ -23,5 +23,6 @@ namespace Kinectinho.View
         {
             InitializeComponent();
         }
+
     }
 }

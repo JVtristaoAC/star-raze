@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="126*"/>
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Left" Margin="358,217,0,0" VerticalAlignment="Top" Height="36" Width="84" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
-        <Button Content="Configurações" x:Name="Configurar" HorizontalAlignment="Left" Margin="327,274,0,0" VerticalAlignment="Top" Height="36" Width="146" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Configurar_Click"/>
-        <Button Content="Sair" x:Name="Sair" HorizontalAlignment="Left" Margin="358,334,0,0" VerticalAlignment="Top" Height="36" Width="84" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Sair_Click"/>
-       
-        <Label Content="Kinect tema do jogo" HorizontalAlignment="Left" Margin="70,56,0,0" VerticalAlignment="Top" FontSize="72" Grid.ColumnSpan="2" Width="660"/>
+        <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Left" Margin="581,333,0,0" VerticalAlignment="Top" Height="48" Width="118" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
+        <Button Content="Configurações" x:Name="Configurar" HorizontalAlignment="Left" Margin="537,409,0,0" VerticalAlignment="Top" Height="48" Width="206" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Configurar_Click"/>
+        <Button Content="Sair" x:Name="Sair" HorizontalAlignment="Left" Margin="581,489,0,0" VerticalAlignment="Top" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Sair_Click"/>
+
+        <Label Content="Kinect tema do jogo" HorizontalAlignment="Left" Margin="310,100,0,0" VerticalAlignment="Top" FontSize="72" Grid.ColumnSpan="2" Width="660"/>
 
     </Grid>
 </Window>

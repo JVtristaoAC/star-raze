@@ -1,12 +1,26 @@
-﻿<Window x:Class="Kinectinho.View.Window1"
+﻿<Window x:Class="Kinectinho.View.TelaFerramentas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Configurações" Height="720" Width="1280">
     <Grid>
-        
+        <Slider	Name="Volume"
+                Margin="113,0,0,0"
+                Height="300"
+                HorizontalAlignment="Left"	
+                VerticalAlignment="Center"
+                Orientation="Vertical"
+                Minimum="0"	
+                Maximum="100"				
+                Value="70"	
+               
+                Thumb.DragCompleted="Volume_DragCompleted"
+                
+                />
+        <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
+        <Label x:Name="SomText" Content="70" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" Width="78"/>
     </Grid>
 </Window>

@@ -15,13 +15,24 @@ using System.Windows.Shapes;
 namespace Kinectinho.View
 {
     /// <summary>
-    /// Lógica interna para Window1.xaml
+    /// Lógica interna para TelaFerramentas.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class TelaFerramentas : Window
     {
-        public Window1()
+        public TelaFerramentas()
         {
             InitializeComponent();
+        }
+
+
+
+
+
+        private void Volume_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            String Sound = Convert.ToString(Volume.Value);
+
+            SomText.Content = Sound;
         }
     }
 }
