@@ -7,20 +7,41 @@
         mc:Ignorable="d"
         Title="Configurações" Height="720" Width="1280">
     <Grid>
-        <Slider	Name="Volume"
-                Margin="113,0,0,0"
-                Height="300"
-                HorizontalAlignment="Left"	
-                VerticalAlignment="Center"
-                Orientation="Vertical"
-                Minimum="0"	
-                Maximum="100"				
-                Value="70"	
+        <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
+        <Slider	x:Name="Volume_Copy"
+            Margin="113,0,0,0"
+            Height="300"
+            HorizontalAlignment="Left"	
+            VerticalAlignment="Center"
+            Orientation="Vertical"
+            Minimum="0"	
+            Maximum="100"				
+            Value="70"	
                
-                Thumb.DragCompleted="Volume_DragCompleted"
+            Thumb.DragCompleted="Volume_DragCompleted"
                 
                 />
-        <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
-        <Label x:Name="SomText" Content="70" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" Width="78"/>
+        <Slider	
+            x:Name="Angulo"
+            Margin="1170,215,0,0"
+            Height="300"
+            HorizontalAlignment="Left"	
+            VerticalAlignment="Top"
+            Orientation="Vertical"
+            Minimum="-27"	
+            Maximum="27"				
+            Value="0"	
+               
+            Thumb.DragCompleted="Angulo_DragCompleted"
+                
+                />
+        <Label Content="Inclinação" HorizontalAlignment="Left" Margin="1108,141,0,0" VerticalAlignment="Top" FontSize="30" Width="142"/>
+
+        <Canvas Name="esqueletobugado" 
+                HorizontalAlignment="Left" 
+                Margin="186,34,0,40" 
+                Width="900" />
+        <Label Content="" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
+        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Left" Margin="16,632,0,0" VerticalAlignment="Top" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
     </Grid>
 </Window>

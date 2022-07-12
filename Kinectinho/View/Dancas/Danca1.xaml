@@ -1,0 +1,13 @@
+﻿<Window x:Class="Kinectinho.View.Dancas.Danca1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinectinho.View.Dancas"
+        mc:Ignorable="d"
+        Title="Danca1" Height="450" Width="800">
+    <Grid>
+        <Label Content="Danca 1"/>
+        <Button Content="Voltar ao menu de seleção" x:Name="Voltar" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Height="48" Width="258" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+    </Grid>
+</Window>
