@@ -55,15 +55,14 @@ namespace Kinectinho.View
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            
             MainWindow janela = new MainWindow();
             janela.Show();
+            this.Hide();
         }
 
         private void Jogar_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-
             switch (i)
             {
                 case 1:
@@ -81,6 +80,7 @@ namespace Kinectinho.View
                     janela3.Show();
                     break;               
             }
+            this.Hide();
         }
     }
 }

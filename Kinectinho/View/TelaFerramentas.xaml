@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
-        Title="Configurações" Height="720" Width="1280">
+        Title="Configurações" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
         <Slider	x:Name="Volume_Copy"

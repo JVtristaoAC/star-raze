@@ -31,23 +31,21 @@ namespace Kinectinho
        
         
 
-      private void Button_Click(object sender, RoutedEventArgs e)
-       {
-            
-       }
 
         private void Jogar_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            
             View.TelaMenu janela = new View.TelaMenu();
             janela.Show();
+            this.Hide();
         }
 
         private void Configurar_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+           
             View.TelaFerramentas janela = new View.TelaFerramentas();
             janela.Show();
+            this.Hide();
         }
 
         private void Sair_Click(object sender, RoutedEventArgs e)

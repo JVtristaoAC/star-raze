@@ -143,5 +143,8 @@
     <Resource Include="View\Imagens\2.jpg" />
     <Resource Include="View\Imagens\3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
