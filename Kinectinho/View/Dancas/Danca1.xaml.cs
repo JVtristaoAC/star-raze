@@ -22,7 +22,7 @@ namespace Kinectinho.View.Dancas
     /// </summary>
     public partial class Danca1 : Window
     {
-       
+        SoundPlayer player = new SoundPlayer(@"C:\Users\User\source\repos\Kinect_WPF\Kinectinho\View\Dancas\Musicas\DançaGatinho.wav");
         KinectSensor kinect;
 
         //Regras da programação
@@ -98,15 +98,17 @@ namespace Kinectinho.View.Dancas
                     MaoDireitaAcimaCabeca = novoTesteMaoDireitaAcimaCabeca;
                     if (MaoDireitaAcimaCabeca)
                     {
-                        SoundPlayer player = new SoundPlayer(@"C:\Users\User\source\repos\Kinect_WPF\Kinectinho\View\Dancas\Musicas\DançaGatinho.wav");
-                        player.Load();
+                        if (this.IsActive) { 
                         player.Play();
-
                         lblMaoDireita.Background = Brushes.Green;
+                        }
+                        else
+                        {
+
+                        }
                     }
                     else
                     {
-                        
                         lblMaoDireita.Background = Brushes.Red;
                     }
 
@@ -134,13 +136,12 @@ namespace Kinectinho.View.Dancas
 
                     if (MaoEsquerdaAcimaCabeca)
                     {
-                        SoundPlayer player = new SoundPlayer(@"C:\Users\User\source\repos\Kinect_WPF\Kinectinho\View\Dancas\Musicas\DançaGatinho.wav");
-                        player.LoadTimeout = 1000000;
-                        player.Play();
-                       
-
-                        lblMaoEsquerda.Background = Brushes.Green;
-                        //MessageBox.Show("PARABÉNS!!! Detectei que você levantou a mão esquerda!");
+                        if (this.IsActive)
+                        {
+                            player.Play();
+                            lblMaoEsquerda.Background = Brushes.Green;
+                        }
+                        
                     }
                     else
                     {
@@ -249,7 +250,7 @@ namespace Kinectinho.View.Dancas
             
             MainWindow janela = new MainWindow();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
