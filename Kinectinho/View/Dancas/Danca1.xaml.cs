@@ -25,8 +25,9 @@ namespace Kinectinho.View.Dancas
         SoundPlayer player = new SoundPlayer(@"C:\Users\User\source\repos\Kinect_WPF\Kinectinho\View\Dancas\Musicas\DançaGatinho.wav");
         KinectSensor kinect;
 
+        int Ponto;
         //Regras da programação
-        bool MaoDireitaAcimaCabeca, MaoEsquerdaAcimaCabeca;
+        bool MaoDireitaAcimaCabeca, MaoEsquerdaAcimaCabeca, MaoDireitaEsquerdaCorpo, MaoEsquerdaDireitaCorpo;
 
         //Rastreamento do Esqueleto
         byte[] info_cores_sensor_kinect = null;
@@ -72,14 +73,128 @@ namespace Kinectinho.View.Dancas
             {
                 if (quadroAtual != null)
                 {
-                    ExecutarRegraMaoDireitaAcimaDaCabeca(quadroAtual);
-                    ExecutarRegraMaoEsquerdaAcimaDaCabeca(quadroAtual);
+                    ReconhecerMaoDireitaAcimaDaCabeca(quadroAtual);
+                    
+
+                    ReconhecerMaoEsquerdaAcimaDaCabeca(quadroAtual);
+                    
+
+                    ReconhecerMaoDireitaEsquerdaCorpo(quadroAtual);
+                    
+
+                    ReconhecerMaoEsquerdaDireitaCorpo(quadroAtual);
+                   
+
                 }
             }
         }
 
+        private void ReconhecerMaoDireitaEsquerdaCorpo(SkeletonFrame quadroAtual) 
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
 
-        private void ExecutarRegraMaoDireitaAcimaDaCabeca(SkeletonFrame quadroAtual)
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint corpo = usuario.Joints[JointType.Spine];
+
+                bool novoTestMaoDireitaEsquerdaCorpo = maoDireita.Position.X < corpo.Position.X;
+
+                if (MaoDireitaEsquerdaCorpo != novoTestMaoDireitaEsquerdaCorpo)
+                {
+                    MaoDireitaEsquerdaCorpo = novoTestMaoDireitaEsquerdaCorpo;
+                    if (MaoDireitaEsquerdaCorpo)
+                    {
+                        if (this.IsActive)
+                        {
+                            player.Play();
+                            lblMaoDireitaEsquerda.Background = Brushes.Green;
+                            MaoDireitaEsquerdaCorpo = true;
+                        }
+
+                    }
+                    else
+                    {
+                        lblMaoDireitaEsquerda.Background = Brushes.Red;
+                        MaoDireitaEsquerdaCorpo = false;
+                    }
+
+                }
+            }
+        }
+        private void ExecutarMaoDireitaEsquerdaCorpo(SkeletonFrame quadroAtual)
+        {
+            if (this.IsActive)
+            {
+               player.Play();
+               lblMaoDireitaEsquerda.Background = Brushes.Green;
+                          
+            }
+            else
+            {
+              lblMaoDireitaEsquerda.Background = Brushes.Red;
+            }
+
+                
+        }
+        private void ReconhecerMaoEsquerdaDireitaCorpo(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint corpo = usuario.Joints[JointType.Spine];
+
+                bool novoTestMaoEsquerdaDireitaCorpo = maoEsquerda.Position.X > corpo.Position.X;
+
+                if (MaoEsquerdaDireitaCorpo != novoTestMaoEsquerdaDireitaCorpo)
+                {
+                    MaoEsquerdaDireitaCorpo = novoTestMaoEsquerdaDireitaCorpo;
+                    if (MaoEsquerdaDireitaCorpo)
+                    {
+                        if (this.IsActive)
+                        {
+                            player.Play();
+                            lblMaoEsquerdaDireita.Background = Brushes.Green;
+                            MaoEsquerdaDireitaCorpo = true;
+                        }
+
+                    }
+                    else
+                    {
+                        lblMaoEsquerdaDireita.Background = Brushes.Red;
+                        MaoEsquerdaDireitaCorpo = false;
+                    }
+
+                }
+            }
+        }
+        private void ExecutarMaoEsquerdaDireitaCorpo(SkeletonFrame quadroAtual){
+            
+                    if (this.IsActive)
+                    {
+                       player.Play();
+                       lblMaoEsquerdaDireita.Background = Brushes.Green;
+                           
+                    }
+                       
+                    
+                    else
+                    {
+                        lblMaoEsquerdaDireita.Background = Brushes.Red;
+                        
+                    }
+
+                
+            }
+        private void ReconhecerMaoDireitaAcimaDaCabeca(SkeletonFrame quadroAtual)
         {
             Skeleton[] esqueletos = new Skeleton[6];
 
@@ -98,25 +213,40 @@ namespace Kinectinho.View.Dancas
                     MaoDireitaAcimaCabeca = novoTesteMaoDireitaAcimaCabeca;
                     if (MaoDireitaAcimaCabeca)
                     {
-                        if (this.IsActive) { 
-                        player.Play();
-                        lblMaoDireita.Background = Brushes.Green;
-                        }
-                        else
+                        if (this.IsActive)
                         {
-
+                            player.Play();
+                            lblMaoDireita.Background = Brushes.Green;
+                            MaoDireitaAcimaCabeca = true;
                         }
+
                     }
                     else
                     {
                         lblMaoDireita.Background = Brushes.Red;
+                        MaoDireitaAcimaCabeca = false;
                     }
 
                 }
             }
         }
+        private void ExecutarMaoDireitaAcimaDaCabeca(SkeletonFrame quadroAtual)
+        {
+            
+            if (this.IsActive) { 
+                player.Play();
+                lblMaoDireita.Background = Brushes.Green;
+            }
+                      
+            else
+            {
+              lblMaoDireita.Background = Brushes.Red;         
+            }
 
-        private void ExecutarRegraMaoEsquerdaAcimaDaCabeca(SkeletonFrame quadroAtual)
+               
+            
+        }
+        private void ReconhecerMaoEsquerdaAcimaDaCabeca(SkeletonFrame quadroAtual)
         {
             Skeleton[] esqueletos = new Skeleton[6];
 
@@ -140,15 +270,32 @@ namespace Kinectinho.View.Dancas
                         {
                             player.Play();
                             lblMaoEsquerda.Background = Brushes.Green;
+                            MaoEsquerdaAcimaCabeca = true;
                         }
-                        
+
                     }
                     else
                     {
                         lblMaoEsquerda.Background = Brushes.Red;
+                        MaoEsquerdaAcimaCabeca = false;
                     }
                 }
             }
+        }
+        private void ExecutarMaoEsquerdaAcimaDaCabeca(SkeletonFrame quadroAtual)
+        {
+           if (this.IsActive)
+           {
+               player.Play();
+               lblMaoEsquerda.Background = Brushes.Green;
+           }
+                               
+           else
+           {
+             lblMaoEsquerda.Background = Brushes.Red;       
+           }
+                
+            
         }
         /**
        * Desenhar o esqueleto do usuário.

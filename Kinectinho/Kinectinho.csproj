@@ -71,6 +71,9 @@
     <Compile Include="View\TelaMenu.xaml.cs">
       <DependentUpon>TelaMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\TelaPontos.xaml.cs">
+      <DependentUpon>TelaPontos.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TelaMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TelaPontos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
