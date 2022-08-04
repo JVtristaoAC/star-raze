@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Title="Danca1" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Loaded="Window_Loaded">
     <Grid>
         
-        <Canvas Name="esqueletobugado" 
-                HorizontalAlignment="Center" 
-                Margin="0,61,0,63" 
-                Width="568" />
+        <canvas name="esqueletobugado" 
+                horizontalalignment="center" 
+                margin="0,61,0,63" 
+                width="568" />
         <StackPanel HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="174" Margin="626,8,0,0">
             <Label x:Name="lblMaoDireita" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
             <Label x:Name="lblMaoEsquerda" Content="Mão Esquerda Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
