@@ -112,18 +112,23 @@ namespace Kinectinho.View.Dancas
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "resources/505.mp3"));
+            mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/resources/505.mp3"));
+            mediaPlayer.Play();
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick;
             timer.Start();
+            lblMaoEsquerdaDireita.Content = System.Environment.CurrentDirectory;
+
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
-        {
+        { 
+            
             if (mediaPlayer.Source != null)
             {
                 Segundos++;
-                if (Segundos >= 10)
+                if (Segundos == 10)
                 {
                     MessageBox.Show("Se passaram 10 segundos");
                 }
@@ -201,6 +206,14 @@ namespace Kinectinho.View.Dancas
             MainWindow janela = new MainWindow();
             janela.Show();
             this.Close();
+            Parar_Executar();
+
+        }
+
+        private void Parar_Executar()
+        {
+            mediaPlayer.Stop();
+            timer.Stop();
         }
     }
 }
