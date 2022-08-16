@@ -9,13 +9,27 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
     <Grid>
-        <Button Content="&gt;" x:Name="Proximo" HorizontalAlignment="Left" Margin="1152,270,0,0" VerticalAlignment="Top" Height="148" Width="118" FontSize="100"  Background="Transparent" BorderBrush="Transparent" Click="Proximo_Click"/>
-        <Button Content="&lt;" x:Name="Anterior" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Height="148" Width="118" FontSize="100"  Background="Transparent" BorderBrush="Transparent" Click="Anterior_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="&gt;" x:Name="Proximo" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="148" Width="118" FontSize="100"  Background="Transparent" BorderBrush="Transparent" Click="Proximo_Click"/>
+        <Button Content="&lt;" x:Name="Anterior" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="148" Width="118" FontSize="100"  Background="Transparent" BorderBrush="Transparent" Click="Anterior_Click"/>
         <Button Width="516" Height="385" Click="Jogar_Click" Background="Transparent" BorderBrush="Transparent">
             <Image x:Name="Danca"  HorizontalAlignment="Center" Height="405" VerticalAlignment="Top" Width="516" Source="Imagens/1.jpg"/>
         </Button>
-        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Left" Margin="36,627,0,0" VerticalAlignment="Top" Height="48" Width="157" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
-        <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Center" Margin="0,554,0,0" VerticalAlignment="Top" Height="48" Width="156" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
+        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="48" Width="157" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="48" Width="156" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
     </Grid>
 
 
