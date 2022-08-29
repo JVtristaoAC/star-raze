@@ -82,5 +82,7 @@ namespace Kinectinho.View
             }
             this.Hide();
         }
+
+       
     }
 }

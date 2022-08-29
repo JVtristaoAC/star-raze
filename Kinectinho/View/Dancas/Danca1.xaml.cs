@@ -112,14 +112,10 @@ namespace Kinectinho.View.Dancas
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/resources/505.mp3"));
-            mediaPlayer.Play();
+            mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/resources/DancaMao.mp3"));
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick;
-            timer.Start();
-            lblMaoEsquerdaDireita.Content = System.Environment.CurrentDirectory;
 
-            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -133,8 +129,19 @@ namespace Kinectinho.View.Dancas
                     MessageBox.Show("Se passaram 10 segundos");
                 }
             }
-              
+
+
+            mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
             
+        }
+
+        private void MediaPlayer_MediaEnded(object sender, EventArgs e)
+        {
+            MessageBox.Show("A musica acabou");
+
+            TelaPontos janela = new TelaPontos();
+            janela.Show();
+            this.Hide();
         }
 
         void etecnect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
@@ -214,6 +221,16 @@ namespace Kinectinho.View.Dancas
         {
             mediaPlayer.Stop();
             timer.Stop();
+        }
+
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
+        {
+            
+            mediaPlayer.Play();
+            timer.Start();
+            esqueletobugado.Visibility = Visibility.Visible;
+            btnIniciar.Visibility = Visibility.Hidden;
+
         }
     }
 }

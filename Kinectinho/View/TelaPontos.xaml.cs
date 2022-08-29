@@ -23,5 +23,19 @@ namespace Kinectinho.View
         {
             InitializeComponent();
         }
+
+        private void btnRepetir_Click(object sender, RoutedEventArgs e)
+        {
+            Dancas.Danca1 janela = new Dancas.Danca1();
+            janela.Show();
+            this.Hide();
+        }
+
+        private void btnEscolha_Click(object sender, RoutedEventArgs e)
+        {
+            TelaMenu janela = new TelaMenu();
+            janela.Show();
+            this.Hide();
+        }
     }
 }

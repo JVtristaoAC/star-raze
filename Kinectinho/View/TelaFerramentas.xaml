@@ -11,10 +11,10 @@
     <Grid>
         <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
         <Slider	x:Name="Volume_Copy"
-            Margin="113,0,0,0"
+            Margin="118,215,0,0"
             Height="300"
             HorizontalAlignment="Left"	
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             Orientation="Vertical"
             Minimum="0"	
             Maximum="100"				
