@@ -21,13 +21,15 @@ namespace Kinectinho.View.Dancas
     /// <summary>
     /// Lógica interna para Danca1.xaml
     /// </summary>
+
     public partial class Danca1 : Window
     {
         MediaPlayer mediaPlayer = new MediaPlayer();
         DispatcherTimer timer = new DispatcherTimer();
         KinectSensor kinect;
-        int Segundos;
-       
+        int Segundos, Pontos;
+        bool MaoAcimaCabeca;
+
         //Rastreamento do Esqueleto
         byte[] info_cores_sensor_kinect = null;
         WriteableBitmap bmp_rgb_cores = null;
@@ -40,12 +42,16 @@ namespace Kinectinho.View.Dancas
 
         public static KinectSensor InicializarPrimeiroSensor(int anguloElevacaoInicial)
         {
+
             KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
 
             kinect.Start();
             kinect.ElevationAngle = anguloElevacaoInicial;
 
             return kinect;
+
+
+
         }
 
         private void InicializarSensor()
@@ -61,8 +67,8 @@ namespace Kinectinho.View.Dancas
 
             // Vinculando aos eventos para exeibir o esqueleto do usuário na tela de "espelho" canvas
             kinect.ColorStream.Enable();
-            kinect.SkeletonFrameReady += etecnect_SkeletonFrameReady;
-            kinect.ColorFrameReady += etecnect_ColorFrameReady;
+            kinect.SkeletonFrameReady += SkeletonFrameReady;
+            kinect.ColorFrameReady += ColorFrameReady;
 
         }
 
@@ -72,18 +78,21 @@ namespace Kinectinho.View.Dancas
             {
                 if (quadroAtual != null)
                 {
-                   
-                   
+
+                    if (Segundos >= 10 && Segundos <= 13)
+                    {
+                        MaoAcimaDaCabeca(quadroAtual);
+                    }
 
                 }
             }
         }
 
-     
+
         /**
        * Desenhar o esqueleto do usuário.
        */
-        void etecnect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        void ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
         {
             using (ColorImageFrame visualizacao = e.OpenColorImageFrame())
             {
@@ -119,8 +128,8 @@ namespace Kinectinho.View.Dancas
         }
 
         private void Timer_Tick(object sender, EventArgs e)
-        { 
-            
+        {
+
             if (mediaPlayer.Source != null)
             {
                 Segundos++;
@@ -132,7 +141,7 @@ namespace Kinectinho.View.Dancas
 
 
             mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
-            
+
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
@@ -144,7 +153,7 @@ namespace Kinectinho.View.Dancas
             this.Hide();
         }
 
-        void etecnect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
+        void SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
             esqueletobugado.Children.Clear();
             Skeleton[] esqueletos = null;
@@ -209,7 +218,7 @@ namespace Kinectinho.View.Dancas
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MainWindow janela = new MainWindow();
             janela.Show();
             this.Close();
@@ -225,11 +234,41 @@ namespace Kinectinho.View.Dancas
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
-            
+
             mediaPlayer.Play();
             timer.Start();
             esqueletobugado.Visibility = Visibility.Visible;
             btnIniciar.Visibility = Visibility.Hidden;
+
+        }
+
+        private void MaoAcimaDaCabeca(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cabeca = usuario.Joints[JointType.Head];
+
+                bool novoTesteMaoAcimaCabeca = maoDireita.Position.Y > cabeca.Position.Y && maoEsquerda.Position.Y > cabeca.Position.Y;
+
+                if (MaoAcimaCabeca != novoTesteMaoAcimaCabeca)
+                {
+                    MaoAcimaCabeca = novoTesteMaoAcimaCabeca;
+                    if (MaoAcimaCabeca == true)
+                    {
+                        Pontos = Pontos + 100;
+
+
+
+                    }
+                }
+            }
 
         }
     }

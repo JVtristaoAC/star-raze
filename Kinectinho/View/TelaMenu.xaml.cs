@@ -24,6 +24,7 @@ namespace Kinectinho.View
         public TelaMenu()
         {
             InitializeComponent();
+
         }
 
         private void Proximo_Click(object sender, RoutedEventArgs e)
