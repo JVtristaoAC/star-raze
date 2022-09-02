@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Kinect;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,26 +65,40 @@ namespace Kinectinho.View
 
         private void Jogar_Click(object sender, RoutedEventArgs e)
         {
-            switch (i)
-            {
-                case 1:
-                    Dancas.Danca1 janela1 = new Dancas.Danca1();
-                    janela1.Show();
-                    break;
+            try {
+                KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
+                switch (i)
+                {
+                    case 1:
+                        Dancas.Danca1 janela1 = new Dancas.Danca1();
+                        janela1.Show();
+                        break;
 
-                case 2:
-                    Dancas.Danca2 janela2 = new Dancas.Danca2();
-                    janela2.Show();
-                    break;
+                    case 2:
+                        Dancas.Danca2 janela2 = new Dancas.Danca2();
+                        janela2.Show();
+                        break;
 
-                case 3:
-                    Dancas.Danca3 janela3 = new Dancas.Danca3();
-                    janela3.Show();
-                    break;               
+                    case 3:
+                        Dancas.Danca3 janela3 = new Dancas.Danca3();
+                        janela3.Show();
+                        break;
+                }
+                this.Hide();
             }
-            this.Hide();
+            catch
+            {
+                MessageBox.Show("Não foi possivel conectar", "Kinect não conectado");
+
+            }
+
+                
+
         }
 
-       
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

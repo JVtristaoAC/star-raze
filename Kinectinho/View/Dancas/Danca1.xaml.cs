@@ -242,7 +242,37 @@ namespace Kinectinho.View.Dancas
 
         }
 
-        private void MaoAcimaDaCabeca(SkeletonFrame quadroAtual)
+        private void MaosAcimaDaCabeca(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cabeca = usuario.Joints[JointType.Head];
+
+                bool novoTesteMaoAcimaCabeca = maoDireita.Position.Y > cabeca.Position.Y && maoEsquerda.Position.Y > cabeca.Position.Y;
+
+                if (MaoAcimaCabeca != novoTesteMaoAcimaCabeca)
+                {
+                    MaoAcimaCabeca = novoTesteMaoAcimaCabeca;
+                    if (MaoAcimaCabeca == true)
+                    {
+                        Pontos = Pontos + 100;
+
+
+
+                    }
+                }
+            }
+
+        }
+
+        private void MaoEsqBaixoCorpo(SkeletonFrame quadroAtual)
         {
             Skeleton[] esqueletos = new Skeleton[6];
 
