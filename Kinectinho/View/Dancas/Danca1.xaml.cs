@@ -78,10 +78,9 @@ namespace Kinectinho.View.Dancas
             {
                 if (quadroAtual != null)
                 {
-
                     if (Segundos >= 10 && Segundos <= 13)
                     {
-                        MaoAcimaDaCabeca(quadroAtual);
+                        MaosAcimaDaCabeca(quadroAtual);
                     }
 
                 }
@@ -272,7 +271,7 @@ namespace Kinectinho.View.Dancas
 
         }
 
-        private void MaoEsqBaixoCorpo(SkeletonFrame quadroAtual)
+        private void MaoDirAbaixoCorpo(SkeletonFrame quadroAtual)
         {
             Skeleton[] esqueletos = new Skeleton[6];
 
@@ -282,10 +281,9 @@ namespace Kinectinho.View.Dancas
             if (usuario != null)
             {
                 Joint maoDireita = usuario.Joints[JointType.HandRight];
-                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
-                Joint cabeca = usuario.Joints[JointType.Head];
+                Joint quadril = usuario.Joints[JointType.HipCenter];
 
-                bool novoTesteMaoAcimaCabeca = maoDireita.Position.Y > cabeca.Position.Y && maoEsquerda.Position.Y > cabeca.Position.Y;
+                bool novoTesteMaoAcimaCabeca = quadril.Position.X > maoDireita.Position.X && quadril.Position.Y > maoDireita.Position.Y;
 
                 if (MaoAcimaCabeca != novoTesteMaoAcimaCabeca)
                 {
@@ -294,8 +292,13 @@ namespace Kinectinho.View.Dancas
                     {
                         Pontos = Pontos + 100;
 
+                        lblMaoDireita.Background = Brushes.Green;
+                        lblMaoDireita.Visibility = Visibility.Visible;
 
-
+                    }
+                    else
+                    {
+                        lblMaoDireita.Visibility = Visibility.Hidden;
                     }
                 }
             }
