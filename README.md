@@ -7,8 +7,9 @@
 
 
 - ### Kinect Xbox 360 <br> 
-<img src="https://user-images.githubusercontent.com/72676389/184256007-233e43fb-2425-4834-aac7-c749aee0ab3d.png" height="350">
- 
-  
+<img src="https://user-images.githubusercontent.com/72676389/188495037-e702a13a-ee81-497f-9d87-b0d8e204f704.jpg" height="350">
+
+
 ## Sobre o Projeto
 ## Em Breve...
+
