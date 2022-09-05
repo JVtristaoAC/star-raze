@@ -28,7 +28,7 @@ namespace Kinectinho.View.Dancas
         DispatcherTimer timer = new DispatcherTimer();
         KinectSensor kinect;
         int Segundos, Pontos;
-        bool MaoAcimaCabeca;
+        bool Testes;
 
         //Rastreamento do Esqueleto
         byte[] info_cores_sensor_kinect = null;
@@ -256,10 +256,10 @@ namespace Kinectinho.View.Dancas
 
                 bool novoTesteMaoAcimaCabeca = maoDireita.Position.Y > cabeca.Position.Y && maoEsquerda.Position.Y > cabeca.Position.Y;
 
-                if (MaoAcimaCabeca != novoTesteMaoAcimaCabeca)
+                if (Testes != novoTesteMaoAcimaCabeca)
                 {
-                    MaoAcimaCabeca = novoTesteMaoAcimaCabeca;
-                    if (MaoAcimaCabeca == true)
+                    Testes = novoTesteMaoAcimaCabeca;
+                    if (Testes == true)
                     {
                         Pontos = Pontos + 100;
 
@@ -285,10 +285,154 @@ namespace Kinectinho.View.Dancas
 
                 bool novoTesteMaoAcimaCabeca = quadril.Position.X > maoDireita.Position.X && quadril.Position.Y > maoDireita.Position.Y;
 
-                if (MaoAcimaCabeca != novoTesteMaoAcimaCabeca)
+                if (Testes != novoTesteMaoAcimaCabeca)
                 {
-                    MaoAcimaCabeca = novoTesteMaoAcimaCabeca;
-                    if (MaoAcimaCabeca == true)
+                    Testes = novoTesteMaoAcimaCabeca;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+                        lblMaoDireita.Background = Brushes.Green;
+                        lblMaoDireita.Visibility = Visibility.Visible;
+
+                    }
+                    else
+                    {
+                        lblMaoDireita.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+
+        }
+        private void MaosEsticada(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint MaoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cotoveloEsquerdo = usuario.Joints[JointType.ElbowLeft];
+                Joint cotoveloDireito = usuario.Joints[JointType.ElbowRight];
+                Joint quadril = usuario.Joints[JointType.HipCenter];
+
+                bool novoTesteMaosEsticada = maoDireita.Position.X > cotoveloDireito.Position.X && cotoveloEsquerdo.Position.X > MaoEsquerda.Position.X && MaoEsquerda.Position.Y > quadril.Position.Y && maoDireita.Position.Y > quadril.Position.Y;
+
+                if (Testes != novoTesteMaosEsticada)
+                {
+                    Testes = novoTesteMaosEsticada;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+                        lblMaoDireita.Background = Brushes.Green;
+                        lblMaoDireita.Visibility = Visibility.Visible;
+
+                    }
+                    else
+                    {
+                        lblMaoDireita.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+
+        }
+
+        private void MaoDirEsticada(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint cotoveloDireito = usuario.Joints[JointType.ElbowRight];
+
+                bool novoTesteMaoDirEsticada = maoDireita.Position.X > cotoveloDireito.Position.X ;
+
+                if (Testes != novoTesteMaoDirEsticada)
+                {
+                    Testes = novoTesteMaoDirEsticada;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+                        lblMaoDireita.Background = Brushes.Green;
+                        lblMaoDireita.Visibility = Visibility.Visible;
+
+                    }
+                    else
+                    {
+                        lblMaoDireita.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+
+        }
+
+        private void MaoEsqEsticadaMaoAcima(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cabeca = usuario.Joints[JointType.Head];
+                Joint cotoveloEsquerdo = usuario.Joints[JointType.ElbowLeft];
+
+
+                bool novoTesteMaoEsqEsticadaMaoAcima = maoDireita.Position.Y > cabeca.Position.Y && cotoveloEsquerdo.Position.X > maoEsquerda.Position.X;
+
+                if (Testes != novoTesteMaoEsqEsticadaMaoAcima)
+                {
+                    Testes = novoTesteMaoEsqEsticadaMaoAcima;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+                        lblMaoDireita.Background = Brushes.Green;
+                        lblMaoDireita.Visibility = Visibility.Visible;
+
+                    }
+                    else
+                    {
+                        lblMaoDireita.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+
+        }
+
+        private void MaosAbaixo(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cotoveloDireito = usuario.Joints[JointType.ElbowRight];
+                Joint cotoveloEsquerdo = usuario.Joints[JointType.ElbowLeft];
+
+
+                bool novoTesteMaosAbaixo = maoDireita.Position.Y < cotoveloDireito.Position.Y && maoEsquerda.Position.Y < cotoveloEsquerdo.Position.Y;
+
+                if (Testes != novoTesteMaosAbaixo)
+                {
+                    Testes = novoTesteMaosAbaixo;
+                    if (Testes == true)
                     {
                         Pontos = Pontos + 100;
 
