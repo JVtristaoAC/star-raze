@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CarouselControl\CarouselControl.cs" />
+    <Compile Include="CarouselControl\ICarouselControl.cs" />
+    <Compile Include="Model\Danca.cs" />
+    <Compile Include="ViewModel\MenuModel.cs" />
     <Compile Include="View\Dancas\Danca1.xaml.cs">
       <DependentUpon>Danca1.xaml</DependentUpon>
     </Compile>
@@ -102,6 +106,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TelaFerramentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,10 +149,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="View\Imagens\1.jpg" />
     <Resource Include="View\Imagens\2.jpg" />

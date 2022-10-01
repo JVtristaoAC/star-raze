@@ -20,38 +20,36 @@ namespace Kinectinho.View
     /// </summary>
     public partial class TelaMenu : Window
     {
-        int i = 1;
-
         public TelaMenu()
         {
             InitializeComponent();
+            DataContext = new ViewModel.MenuModel();
 
+            _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
+        }
+
+        private void _carouselDABDancas_SelectionChanged(FrameworkElement selectedElement)
+        {
+            var viewModel = DataContext as ViewModel.MenuModel;
+            if (viewModel == null)
+            {
+                return;
+            }
+
+            viewModel.SelectedDancaDAB = selectedElement.DataContext as Model.Danca;
         }
 
         private void Proximo_Click(object sender, RoutedEventArgs e)
         {
-            i++;
+            _carouselDABDancas.RotateRight();
 
-            if (i > 3)
-            {
-                i = 1;
-            }
-
-            Danca.Source = new BitmapImage(new Uri(@"imagens/" + i + ".jpg", UriKind.Relative));
-             
 
         }
 
         private void Anterior_Click(object sender, RoutedEventArgs e)
         {
-            i--;
 
-            if (i < 1)
-            {
-                i = 3;
-            }
-
-            Danca.Source = new BitmapImage(new Uri(@"imagens/" + i + ".jpg", UriKind.Relative));
+            _carouselDABDancas.RotateLeft();
 
         }
 
@@ -63,37 +61,19 @@ namespace Kinectinho.View
             this.Hide();
         }
 
-        private void Jogar_Click(object sender, RoutedEventArgs e)
+        private void Carrossel_1(object sender, RoutedEventArgs e)
         {
-            try {
-                KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
-                switch (i)
-                {
-                    case 1:
-                        Dancas.Danca1 janela1 = new Dancas.Danca1();
-                        janela1.Show();
-                        break;
+            MessageBox.Show("Dança mao");
+        }
 
-                    case 2:
-                        Dancas.Danca2 janela2 = new Dancas.Danca2();
-                        janela2.Show();
-                        break;
+        private void Carrossel_2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Dança mao");
+        }
 
-                    case 3:
-                        Dancas.Danca3 janela3 = new Dancas.Danca3();
-                        janela3.Show();
-                        break;
-                }
-                this.Hide();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possivel conectar", "Kinect não conectado");
-
-            }
-
-                
-
+        private void Carrossel_3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Dança mao");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
