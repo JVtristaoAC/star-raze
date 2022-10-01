@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Kinectinho.ViewModel
 {
+    
         public class MenuModel : System.ComponentModel.INotifyPropertyChanged
         {
+
             public MenuModel()
             {
                 DancasDAB = new System.Collections.ObjectModel.ObservableCollection<Model.Danca>();
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança da Mãozinha", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/mao.jpg"), Clicked = "Carrossel_1" });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 2", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/psy.jpg"), Clicked = "Carrossel_2" });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 3", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/dinamite.jpg"), Clicked = "Carrossel_3" });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança da Mãozinha", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/mao.jpg"), Carroussel = 1 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança 2", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/psy.jpg"), Carroussel = 2 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança 3", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/dinamite.jpg"), Carroussel = 3 });
 
 
                 SelectedDancaDAB = DancasDAB[0];
             }
 
-            private System.Collections.ObjectModel.ObservableCollection<Model.Danca> _dancasDAB;
+
+        private System.Collections.ObjectModel.ObservableCollection<Model.Danca> _dancasDAB;
             public System.Collections.ObjectModel.ObservableCollection<Model.Danca> DancasDAB
             {
                 get
@@ -47,9 +52,12 @@ namespace Kinectinho.ViewModel
                 }
             }
 
-            #region INotifyPropertyChanged
 
-            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+          
+        #region INotifyPropertyChanged
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
             protected virtual void NotifyPropertyChanged(string propertyName)
             {

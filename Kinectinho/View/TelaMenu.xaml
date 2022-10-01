@@ -30,8 +30,7 @@
                         <Setter.Value>
                             <ControlTemplate>
                                 <Grid>
-                                    <Button Background="Transparent" BorderBrush="Transparent" x:Name="Index">
-                                        <!--Command="{Binding Clicked}-->
+                                    <Button Background="Transparent" BorderBrush="Transparent" Click="Button_Click">
                                         <Image Grid.Row="0" Source="{Binding ImageSource}" VerticalAlignment="Center" HorizontalAlignment="Center" Height="300"/>
                                     </Button>
                                 </Grid>
@@ -42,7 +41,7 @@
             </CarouselControl:CarouselControl.Style>
         </CarouselControl:CarouselControl>
         <Button Content="Voltar ao Menu" x:Name="Voltar" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="48" Width="157" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
-        <Button Content="Jogar" x:Name="Jogar" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="48" Width="156" FontSize="20"  Background="Transparent" BorderBrush="Transparent" />
+        <Button Content="Jogar" x:Name="Jogar" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="48" Width="156" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Button_Click" />
     </Grid>
 
 
