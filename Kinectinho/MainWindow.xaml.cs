@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using WpfAnimatedGif;
 
 
 namespace Kinectinho
@@ -21,9 +21,9 @@ namespace Kinectinho
    public partial class MainWindow : Window
    {
 
+       
 
-
-       public MainWindow() 
+        public MainWindow() 
        {
           InitializeComponent();
        }
@@ -53,8 +53,11 @@ namespace Kinectinho
             this.Close();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+             
+            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/inicio.gif")));
 
-
-      
+        }
     }
 }

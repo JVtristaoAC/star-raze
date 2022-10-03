@@ -4,11 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="Configurações" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Loaded="Window_Loaded">
     <Grid>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+
+                    <Image x:Name="Fundo"
+                           gif:ImageBehavior.AutoStart="True"
+                           gif:ImageBehavior.RepeatBehavior="1" />
+
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+        
         <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
         <Slider	x:Name="Volume_Copy"
             Margin="118,215,0,0"

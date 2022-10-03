@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Microsoft.Kinect;
-
+using WpfAnimatedGif;
 namespace Kinectinho.View
 {
     /// <summary>
@@ -194,6 +194,11 @@ namespace Kinectinho.View
             janela.Show();
             this.Hide();
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/Ferramentas.gif")));
         }
     }
 }

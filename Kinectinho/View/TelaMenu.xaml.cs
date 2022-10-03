@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
+using WpfAnimatedGif;
 namespace Kinectinho.View
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Kinectinho.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/selecao.gif")));
         }
 
      

@@ -6,9 +6,22 @@
         xmlns:local="clr-namespace:Kinectinho"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Loaded="Window_Loaded">
     <Grid>
+         <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+
+                    <Image x:Name="Fundo"
+                           gif:ImageBehavior.AutoStart="True"
+                           gif:ImageBehavior.RepeatBehavior="1" /> 
+                    
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
@@ -16,7 +29,15 @@
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="Kinect tema do jogo" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="72" Grid.ColumnSpan="2" Width="660"/>
+
+        <!-- <Border BorderBrush="Aqua" BorderThickness="9" Grid.Row="0" Grid.Column="0">
+            <Label Content="Kinect tema do jogo" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="72" Grid.ColumnSpan="2" Width="660"/> 
+             <Image Source="/View/imagens/duna.jpg" Width="500" Height="500"   /> 
+        </Border> -->
+
+       
+
+        <!-- <Label Content="Kinect tema do jogo" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="72" Grid.ColumnSpan="2" Width="660"/> -->
         <Button Content="Jogar" x:Name="Jogar" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Height="48" Width="118" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Jogar_Click"/>
         <Button Content="Configurações" x:Name="Configurar" HorizontalAlignment="Center" Grid.Row="2"  VerticalAlignment="Center" Height="48" Width="206" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Configurar_Click"/>
         <Button Content="Sair" x:Name="Sair" HorizontalAlignment="Center" Grid.Row="3"  VerticalAlignment="Center" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Sair_Click"/>
