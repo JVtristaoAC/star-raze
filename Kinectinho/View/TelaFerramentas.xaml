@@ -27,9 +27,9 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
+                          gif:ImageBehavior.AnimatedSource="/View/Img/inicio.gif"
                            gif:ImageBehavior.AutoStart="True"
                            gif:ImageBehavior.RepeatBehavior="1" />
-
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>

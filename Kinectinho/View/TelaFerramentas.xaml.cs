@@ -188,16 +188,30 @@ namespace Kinectinho.View
         }
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {           
             MainWindow janela = new MainWindow();
             janela.Show();
-            this.Hide();
-
+            this.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            /*ImageBehavior.SetAnimatedSource(
+                new Image
+                {
+                    Source = Environment.CurrentDirectory + "/resources/Ferramentas.gif")
+                })*/
+
+            //ImageBehavior.SetAnimatedSource(Fundo, Fundo.Source);
+
+            //Image img = new Image();
+            //ImageSource img_src = new ImageSource();
+
+
+
+         //ImageBehavior.SetAnimatedSource(
+
+          // ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/Ferramentas.gif")));
            // ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/Ferramentas.gif")));
         }
     }

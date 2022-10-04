@@ -153,6 +153,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
+    <Content Include="View\Img\inicio.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

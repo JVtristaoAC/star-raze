@@ -37,7 +37,7 @@ namespace Kinectinho
             
             View.TelaMenu janela = new View.TelaMenu();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Configurar_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace Kinectinho
            
             View.TelaFerramentas janela = new View.TelaFerramentas();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Sair_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace Kinectinho
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
              
-            //ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/inicio.gif")));
+            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/inicio.gif")));
 
         }
     }
