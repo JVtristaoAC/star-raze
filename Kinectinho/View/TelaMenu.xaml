@@ -10,8 +10,7 @@
         WindowState="Maximized"
         Loaded="Window_Loaded">
     <Grid>
-        <Grid>
-            <Grid.Background>
+        <Grid.Background>
                 <VisualBrush>
                     <VisualBrush.Visual>
 

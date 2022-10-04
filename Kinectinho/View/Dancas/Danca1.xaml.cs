@@ -60,11 +60,6 @@ namespace Kinectinho.View.Dancas
             kinect = InicializarPrimeiroSensor(0);
             kinect.SkeletonStream.Enable();
 
-
-            // Vinculo dos eventos que queremos reconhecer.
-            kinect.SkeletonFrameReady += KinectEvent;
-
-
             // Vinculando aos eventos para exeibir o esqueleto do usuário na tela de "espelho" canvas
             kinect.ColorStream.Enable();
             kinect.SkeletonFrameReady += SkeletonFrameReady;
@@ -78,10 +73,7 @@ namespace Kinectinho.View.Dancas
             {
                 if (quadroAtual != null)
                 {
-                    if (Segundos >= 10 && Segundos <= 13)
-                    {
-                        MaosAcimaDaCabeca(quadroAtual);
-                    }
+                    
 
                 }
             }
@@ -132,10 +124,7 @@ namespace Kinectinho.View.Dancas
             if (mediaPlayer.Source != null)
             {
                 Segundos++;
-                if (Segundos == 10)
-                {
-                    MessageBox.Show("Se passaram 10 segundos");
-                }
+                kinect.SkeletonFrameReady += KinectEvent;
             }
 
 

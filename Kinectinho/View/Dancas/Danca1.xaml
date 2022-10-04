@@ -5,24 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View.Dancas"
         mc:Ignorable="d"
-        Title="Danca da Mãozinha" Height="450" Width="800"
+        Title="Danca da Mãozinha" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="640"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="360"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
         <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Center" 
-                Margin="0,61,0,63" 
-                Width="780" 
+                Grid.Column="1" Grid.Row="1"
+                Width="640" Height="360"
                 Visibility="Hidden"/>
-        <StackPanel HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="174" Margin="626,8,0,0">
+        
+        <StackPanel HorizontalAlignment="Right" Height="249" VerticalAlignment="Top" Width="174" Grid.Column="2">
             <Label x:Name="lblMaoDireita" Visibility="Hidden" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
             <Label x:Name="lblMaoEsquerda"  Visibility="Hidden" Content="Mão Esquerda Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
             <Label x:Name="lblMaoDireitaEsquerda" Visibility="Hidden" Content="Mão Direita pra Esquerda" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
             <Label x:Name="lblMaoEsquerdaDireita"  Visibility="Hidden" Content="Mão Esquerda pra Direita" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
         </StackPanel>
-        <Button Content="Voltar ao menu de seleção" x:Name="Voltar" HorizontalAlignment="Left" Margin="284,13,0,0" VerticalAlignment="Top" Height="48" Width="258" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
-        <Button x:Name="btnIniciar" Content="Iniciar" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="btnIniciar_Click"/>
+
+        <Button Content="Voltar ao menu de seleção" x:Name="Voltar" Height="48" Width="258" FontSize="20" Grid.Row="2" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Button x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="2" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="btnIniciar_Click"/>
     </Grid>
 </Window>

@@ -56,7 +56,7 @@ namespace Kinectinho
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
              
-            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/inicio.gif")));
+            //ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/inicio.gif")));
 
         }
     }

@@ -11,6 +11,17 @@
         WindowState="Maximized"
         Loaded="Window_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="640"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="360"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
         <Grid.Background>
             <VisualBrush>
                 <VisualBrush.Visual>
@@ -23,41 +34,31 @@
             </VisualBrush>
         </Grid.Background>
         
-        <Label Content="Volume" HorizontalAlignment="Left" Margin="68,128,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
+        <Label Content="Volume" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="30" Width="118"/>
         <Slider	x:Name="Volume_Copy"
-            Margin="118,215,0,0"
             Height="300"
-            HorizontalAlignment="Left"	
-            VerticalAlignment="Top"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
             Orientation="Vertical"
-            Minimum="0"	
-            Maximum="100"				
-            Value="70"	
-               
-            Thumb.DragCompleted="Volume_DragCompleted"
-                
-                />
+            Grid.Row="1"
+            Minimum="0"	Maximum="100" Value="70"	
+            Thumb.DragCompleted="Volume_DragCompleted"/>
         <Slider	
             x:Name="Angulo"
-            Margin="1170,215,0,0"
             Height="300"
-            HorizontalAlignment="Left"	
-            VerticalAlignment="Top"
+            Grid.Column="2" Grid.Row="1"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
             Orientation="Vertical"
-            Minimum="-27"	
-            Maximum="27"				
-            Value="0"	
-               
-            Thumb.DragCompleted="Angulo_DragCompleted"
-                
-                />
-        <Label Content="Inclinação" HorizontalAlignment="Left" Margin="1108,141,0,0" VerticalAlignment="Top" FontSize="30" Width="142"/>
+            Minimum="-27" Maximum="27" Value="0"	
+            Thumb.DragCompleted="Angulo_DragCompleted"/>
+        
+        <Label Content="Inclinação" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Bottom" FontSize="30" Width="142"/>
 
         <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Left" 
-                Margin="186,34,0,40" 
-                Width="900" />
+                Grid.Column="1" Grid.Row="1"
+                Width="640"/>
+        
         <Label Content="" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
-        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Left" Margin="16,632,0,0" VerticalAlignment="Top" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
     </Grid>
 </Window>
