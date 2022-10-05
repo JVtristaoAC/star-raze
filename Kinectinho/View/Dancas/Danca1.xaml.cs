@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 using Microsoft.Kinect;
+using XamlAnimatedGif;
 
 namespace Kinectinho.View.Dancas
 {
@@ -115,6 +116,7 @@ namespace Kinectinho.View.Dancas
             mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/resources/DancaMao.mp3"));
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick;
+            AnimationBehavior.SetSourceUri(Fundo, new Uri(Environment.CurrentDirectory + "/resources/TelaMao.gif"));
 
         }
 

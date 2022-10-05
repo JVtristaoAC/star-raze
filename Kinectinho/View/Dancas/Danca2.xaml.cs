@@ -31,5 +31,10 @@ namespace Kinectinho.View.Dancas
             janela.Show();
             this.Hide();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

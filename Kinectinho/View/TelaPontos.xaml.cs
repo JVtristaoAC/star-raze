@@ -28,14 +28,14 @@ namespace Kinectinho.View
         {
             Dancas.Danca1 janela = new Dancas.Danca1();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEscolha_Click(object sender, RoutedEventArgs e)
         {
             TelaMenu janela = new TelaMenu();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

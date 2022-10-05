@@ -15,7 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-using WpfAnimatedGif;
+
+using XamlAnimatedGif;
+
 namespace Kinectinho.View
 {
     /// <summary>
@@ -61,13 +63,13 @@ namespace Kinectinho.View
             
             MainWindow janela = new MainWindow();
             janela.Show();
-            this.Hide();
+            this.Close();
         }
    
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ImageBehavior.SetAnimatedSource(Fundo, new BitmapImage(new Uri(Environment.CurrentDirectory + "/resources/selecao.gif")));
+           AnimationBehavior.SetSourceUri(Fundo, new Uri(Environment.CurrentDirectory + "/resources/selecao.gif"));
         }
 
      
@@ -81,18 +83,18 @@ namespace Kinectinho.View
                     case 1:
                         Dancas.Danca1 janela1 = new Dancas.Danca1();
                         janela1.Show();
-                        this.Hide();
+                        this.Close();
                     break;
                     case 2:
                         Dancas.Danca2 janela2 = new Dancas.Danca2();
                         janela2.Show();
-                        this.Hide();
+                        this.Close();
                     break;
 
                     case 3:
                         Dancas.Danca3 janela3 = new Dancas.Danca3();
                         janela3.Show();
-                        this.Hide();
+                        this.Close();
                     break;
 
                 }
