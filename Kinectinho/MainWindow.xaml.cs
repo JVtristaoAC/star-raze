@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using XamlAnimatedGif;
 
+using WpfAnimatedGif;
 namespace Kinectinho
 {
 
@@ -26,7 +26,12 @@ namespace Kinectinho
         public MainWindow() 
        {
           InitializeComponent();
-       }
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/inicio.gif");
+            image.EndInit();
+            ImageBehavior.SetAnimatedSource(Fundo, image);
+        }
 
        
         
@@ -56,7 +61,7 @@ namespace Kinectinho
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
              
-            AnimationBehavior.SetSourceUri(Fundo, new Uri(Environment.CurrentDirectory + "/resources/inicio.gif"));
+            
 
         }
     }

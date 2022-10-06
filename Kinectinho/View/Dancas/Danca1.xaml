@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View.Dancas"
-        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="Danca da Mãozinha" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
@@ -17,8 +17,8 @@
 
                     <Image x:Name="Fundo"
                            
-                           gif:AnimationBehavior.AutoStart="True"
-                           gif:AnimationBehavior.RepeatBehavior="1"/>
+                           gif:ImageBehavior.AutoStart="True"
+                           gif:ImageBehavior.RepeatBehavior="1"/>
 
                 </VisualBrush.Visual>
             </VisualBrush>

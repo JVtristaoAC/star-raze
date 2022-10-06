@@ -8,7 +8,7 @@
         Title="Danca2" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        Loaded="">
+        >
     <Grid>
         <Label Content="Danca 2"/>
         <Button Content="Voltar ao Menu de selação" x:Name="Voltar" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="48" Width="264" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>

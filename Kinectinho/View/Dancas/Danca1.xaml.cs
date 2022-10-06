@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 using Microsoft.Kinect;
-using XamlAnimatedGif;
+using WpfAnimatedGif;
 
 namespace Kinectinho.View.Dancas
 {
@@ -39,6 +39,12 @@ namespace Kinectinho.View.Dancas
         {
             InitializeComponent();
             InicializarSensor();
+
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/TelaMao.gif");
+            image.EndInit();
+            ImageBehavior.SetAnimatedSource(Fundo, image);
         }
 
         public static KinectSensor InicializarPrimeiroSensor(int anguloElevacaoInicial)
@@ -116,7 +122,7 @@ namespace Kinectinho.View.Dancas
             mediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/resources/DancaMao.mp3"));
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick;
-            AnimationBehavior.SetSourceUri(Fundo, new Uri(Environment.CurrentDirectory + "/resources/TelaMao.gif"));
+            
 
         }
 

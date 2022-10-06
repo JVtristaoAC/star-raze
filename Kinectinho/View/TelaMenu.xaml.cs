@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 
-using XamlAnimatedGif;
+using WpfAnimatedGif;
 
 namespace Kinectinho.View
 {
@@ -32,6 +32,15 @@ namespace Kinectinho.View
             DataContext = new ViewModel.MenuModel();
 
             _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
+
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/selecao.gif");
+            image.EndInit();
+            ImageBehavior.SetAnimatedSource(Fundo, image);
+
+            
+
         }
 
         private void _carouselDABDancas_SelectionChanged(FrameworkElement selectedElement)
@@ -69,7 +78,7 @@ namespace Kinectinho.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           AnimationBehavior.SetSourceUri(Fundo, new Uri(Environment.CurrentDirectory + "/resources/selecao.gif"));
+           
         }
 
      

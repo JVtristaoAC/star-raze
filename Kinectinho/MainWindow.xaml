@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Kinectinho"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
-        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" 
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded">
+
     <Grid>
          <Grid.Background>
             <VisualBrush>
@@ -17,8 +18,9 @@
 
                     <Image x:Name="Fundo"
                            
-                           gif:AnimationBehavior.AutoStart="True"
-                           gif:AnimationBehavior.RepeatBehavior="1"/> 
+                          gif:ImageBehavior.AutoStart="True"
+                          gif:ImageBehavior.RepeatBehavior="1"
+                           /> 
                     
                 </VisualBrush.Visual>
             </VisualBrush>
