@@ -19,7 +19,6 @@
                     <Image x:Name="Fundo"
                           gif:ImageBehavior.AnimatedSource="View/Imagens/inicio.gif"
                           gif:ImageBehavior.AutoStart="True"
-                          gif:ImageBehavior.RepeatBehavior="1"
                            /> 
                     
                 </VisualBrush.Visual>
