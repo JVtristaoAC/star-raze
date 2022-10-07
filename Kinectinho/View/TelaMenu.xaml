@@ -8,14 +8,13 @@
         Title="Seleção do Jogo" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        Loaded="Window_Loaded"
-        Background="Purple">
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
                 <VisualBrush>
                 <VisualBrush.Visual>
                     <Image x:Name="Fundo"                         
-                           
+                               gif:ImageBehavior.AnimatedSource="\View\Imagens\selecao.gif"
                                gif:ImageBehavior.AutoStart="True"
                                gif:ImageBehavior.RepeatBehavior="1"
                                />

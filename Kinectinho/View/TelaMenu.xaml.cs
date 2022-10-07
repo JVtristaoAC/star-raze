@@ -33,12 +33,7 @@ namespace Kinectinho.View
 
             _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
 
-            var image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/selecao.gif");
-            image.EndInit();
-            ImageBehavior.SetAnimatedSource(Fundo, image);
-
+    
             
 
         }

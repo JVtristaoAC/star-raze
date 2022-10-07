@@ -26,11 +26,7 @@ namespace Kinectinho
         public MainWindow() 
        {
           InitializeComponent();
-            var image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/inicio.gif");
-            image.EndInit();
-            ImageBehavior.SetAnimatedSource(Fundo, image);
+          
         }
 
        
