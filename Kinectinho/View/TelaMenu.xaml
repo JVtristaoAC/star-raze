@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:CarouselControl="clr-namespace:Kinectinho.CarouselControl"
         mc:Ignorable="d"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         Title="Seleção do Jogo" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
@@ -14,8 +14,8 @@
                 <VisualBrush>
                 <VisualBrush.Visual>
                     <Image x:Name="Fundo"                         
-                               gif:ImageBehavior.AnimatedSource="\View\Imagens\selecao.gif"
-                               gif:ImageBehavior.AutoStart="True"
+                               gif:AnimationBehavior.SourceUri="Resources\selecao.gif"
+                               gif:AnimationBehavior.AutoStart="True"
  
                                />
 

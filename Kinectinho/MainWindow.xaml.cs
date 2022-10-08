@@ -39,6 +39,7 @@ namespace Kinectinho
             View.TelaMenu janela = new View.TelaMenu();
             janela.Show();
             this.Close();
+            
         }
 
         private void Configurar_Click(object sender, RoutedEventArgs e)

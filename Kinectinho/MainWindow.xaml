@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kinectinho"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com" 
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded">
@@ -17,8 +17,8 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                          gif:ImageBehavior.AnimatedSource="View/Imagens/inicio.gif"
-                          gif:ImageBehavior.AutoStart="True"
+                          gif:AnimationBehavior.SourceUri="Resources\inicio.gif"
+                          gif:AnimationBehavior.AutoStart="True"
                            /> 
                     
                 </VisualBrush.Visual>

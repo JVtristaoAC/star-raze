@@ -4,12 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
         Title="Configurações" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
-        Loaded="Window_Loaded">
+        WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,8 +26,8 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           gif:ImageBehavior.AnimatedSource="\View\Imagens\Ferramentas.gif"
-                           gif:ImageBehavior.AutoStart="True"
+                           gif:AnimationBehavior.SourceUri="Resources\Ferramentas.gif"
+                           gif:AnimationBehavior.AutoStart="True"
                             />
                 </VisualBrush.Visual>
             </VisualBrush>

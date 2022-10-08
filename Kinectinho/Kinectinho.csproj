@@ -38,6 +38,7 @@
     <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +67,11 @@
     <Compile Include="CarouselControl\CarouselControl.cs" />
     <Compile Include="CarouselControl\ICarouselControl.cs" />
     <Compile Include="Model\Danca.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\MenuModel.cs" />
     <Compile Include="View\Dancas\Danca1.xaml.cs">
       <DependentUpon>Danca1.xaml</DependentUpon>
@@ -130,11 +136,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -142,8 +143,10 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\resources\Retro Gaming.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +159,52 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="bin\Debug\resources\DancaMao.mp3" />
+    <None Include="bin\Debug\resources\dinamite.jpg" />
+    <None Include="bin\Debug\resources\Ferramentas.gif" />
+    <None Include="bin\Debug\resources\inicio.gif" />
+    <None Include="bin\Debug\resources\mao.jpg" />
+    <None Include="bin\Debug\resources\psy.jpg" />
+    <None Include="bin\Debug\resources\selecao.gif" />
+    <None Include="bin\Debug\resources\TelaDinamite.jpg" />
+    <None Include="bin\Debug\resources\TelaMao.jpg" />
+    <None Include="bin\Debug\resources\TelaOculos.jpg" />
+    <None Include="bin\Debug\View\Imagens\dinamite.jpg" />
+    <None Include="bin\Debug\View\Imagens\Ferramentas.gif" />
+    <None Include="bin\Debug\View\Imagens\inicio.gif" />
+    <None Include="bin\Debug\View\Imagens\mao.jpg" />
+    <None Include="bin\Debug\View\Imagens\psy.jpg" />
+    <None Include="bin\Debug\View\Imagens\selecao.gif" />
+    <None Include="bin\Debug\View\Imagens\TelaDinamite.jpg" />
+    <None Include="bin\Debug\View\Imagens\TelaMao.jpg" />
+    <None Include="bin\Debug\View\Imagens\TelaOculos.jpg" />
+    <Resource Include="Resources\inicio.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Ferramentas.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dinamite.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\mao.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\psy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\selecao.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TelaDinamite.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TelaMao.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TelaOculos.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="View\Dancas\Musicas\DancaMao.mp3" />
     <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
     <Content Include="View\Imagens\dinamite.jpg">
