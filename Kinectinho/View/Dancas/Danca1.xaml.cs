@@ -40,11 +40,7 @@ namespace Kinectinho.View.Dancas
             InitializeComponent();
             InicializarSensor();
 
-            var image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(Environment.CurrentDirectory + "/resources/TelaMao.gif");
-            image.EndInit();
-            ImageBehavior.SetAnimatedSource(Fundo, image);
+
         }
 
         public static KinectSensor InicializarPrimeiroSensor(int anguloElevacaoInicial)

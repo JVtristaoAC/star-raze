@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="Configurações" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Background="Purple">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -26,14 +27,15 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           gif:AnimationBehavior.SourceUri="Imagens\Ferramentas.gif"
+                           gif:AnimationBehavior.SourceUri="Dancas\Imagens\Ferramentas.gif"
                            gif:AnimationBehavior.AutoStart="True"
                             />
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
         
-        <Label Content="Volume" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="30" Width="118"/>
+        <Label Content="Volume" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource Lbl_Retro}"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="50" FontSize="30" Style="{StaticResource Lbl_Retro}" Grid.Row="1"/>
         <Slider	x:Name="Volume_Copy"
             Height="300"
             HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -41,6 +43,9 @@
             Grid.Row="1"
             Minimum="0"	Maximum="100" Value="70"	
             Thumb.DragCompleted="Volume_DragCompleted"/>
+
+        <Label Content="Inclinação" Grid.Column="2" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource Lbl_Retro}"/>
+        
         <Slider	
             x:Name="Angulo"
             Height="300"
@@ -50,14 +55,14 @@
             Minimum="-27" Maximum="27" Value="0"	
             Thumb.DragCompleted="Angulo_DragCompleted"/>
         
-        <Label Content="Inclinação" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Bottom" FontSize="30" Width="142"/>
+        
 
         <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Left" 
                 Grid.Column="1" Grid.Row="1"
                 Width="640"/>
+
         
-        <Label Content="" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
-        <Button Content="Voltar ao Menu" Style="{StaticResource RetroGaming}" x:Name="Voltar" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Button Content="Voltar ao Menu" Style="{StaticResource Btn_Retro}" x:Name="Voltar" Grid.Row="2" FontSize="20" Click="Voltar_Click"/>
     </Grid>
 </Window>

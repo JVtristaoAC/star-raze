@@ -18,13 +18,14 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                          gif:AnimationBehavior.SourceUri="Imagens\inicio.gif"
+                          gif:AnimationBehavior.SourceUri="Dancas\Imagens\inicio.gif"
                           gif:AnimationBehavior.AutoStart="True"
                            />
 
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="70"/>
@@ -33,13 +34,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="StarRaze" FontSize="72" Grid.ColumnSpan="2" Style="{StaticResource RetroGaming}" />
+        <Label Content="StarRaze" FontSize="72" Grid.ColumnSpan="2" Style="{StaticResource Lbl_Retro}" />
 
-        <Button Content="Jogar" x:Name="Jogar" Grid.Row="1" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"         Click="Jogar_Click" Style="{StaticResource RetroGaming}" />
+        <Button Content="Jogar" x:Name="Jogar" Grid.Row="1" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"         Click="Jogar_Click" Style="{StaticResource Btn_Retro}" />
 
-        <Button Content="Configurações" x:Name="Configurar" Grid.Row="2" Height="48" Width="206" FontSize="20" Background="Transparent"                       BorderBrush="Transparent" Click="Configurar_Click" Style="{StaticResource RetroGaming}" />
+        <Button Content="Configurações" x:Name="Configurar" Grid.Row="2" Height="48" Width="206" FontSize="20" Background="Transparent"                       BorderBrush="Transparent" Click="Configurar_Click" Style="{StaticResource Btn_Retro}" />
 
-        <Button Content="Sair" x:Name="Sair" Grid.Row="3" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"           Click="Sair_Click" Style="{StaticResource RetroGaming}" />
+        <Button Content="Sair" x:Name="Sair" Grid.Row="3" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"           Click="Sair_Click" Style="{StaticResource Btn_Retro}" />
 
 
 

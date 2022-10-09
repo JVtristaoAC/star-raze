@@ -4,11 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View.Dancas"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
-        Title="Danca3" Height="450" Width="800"
+        Title="Dinamite" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Background="Purple">
     <Grid>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+
+                    <Image x:Name="Fundo"
+                           gif:AnimationBehavior.SourceUri="Imagens\TelaDinamite.jpg"
+                           gif:AnimationBehavior.AutoStart="True"
+                           />
+
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+        
         <Label Content="Danca 3"/>
         <Button Content="Voltar ao Menu de seleção" x:Name="Voltar" HorizontalAlignment="Left" Margin="243,217,0,0" VerticalAlignment="Top" Height="48" Width="263" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
     </Grid>

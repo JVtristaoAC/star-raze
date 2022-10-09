@@ -4,28 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View.Dancas"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
         Title="Danca da Mãozinha" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        Background="Purple">
     <Grid>
         <Grid.Background>
             <VisualBrush>
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           
-                           gif:ImageBehavior.AutoStart="True"
-                           gif:ImageBehavior.RepeatBehavior="1"/>
+                           gif:AnimationBehavior.SourceUri="Imagens\TelaMao.jpg"
+                           gif:AnimationBehavior.AutoStart="True"
+                           />
 
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="640"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="600"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -48,7 +49,8 @@
             <Label x:Name="lblMaoEsquerdaDireita"  Visibility="Hidden" Content="Mão Esquerda pra Direita" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
         </StackPanel>
 
-        <Button Content="Voltar ao menu de seleção" x:Name="Voltar" Height="48" Width="258" FontSize="20" Grid.Row="2" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
-        <Button x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="2" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="btnIniciar_Click"/>
+        <Button Content="Voltar ao menu de seleção" x:Name="Voltar" FontSize="20" Grid.Row="2" Grid.ColumnSpan="1" Click="Voltar_Click" Style="{StaticResource Btn_Retro}"/>
+        <Button x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="2" FontSize="20" Click="btnIniciar_Click"
+                Style="{StaticResource Btn_Retro}"/>
     </Grid>
 </Window>

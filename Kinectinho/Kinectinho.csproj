@@ -165,10 +165,10 @@
     <Resource Include="bin\Debug\Resources\dinamite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\Ferramentas.gif">
+    <Resource Include="View\Dancas\Imagens\Ferramentas.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\inicio.gif">
+    <Resource Include="View\Dancas\Imagens\inicio.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="bin\Debug\Resources\mao.jpg">
@@ -177,16 +177,16 @@
     <Resource Include="bin\Debug\Resources\psy.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\selecao.gif">
+    <Resource Include="View\Dancas\Imagens\selecao.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\TelaDinamite.jpg">
+    <Resource Include="View\Dancas\Imagens\TelaDinamite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\TelaMao.jpg">
+    <Resource Include="View\Dancas\Imagens\TelaMao.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="View\Imagens\TelaOculos.jpg">
+    <Resource Include="View\Dancas\Imagens\TelaOculos.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

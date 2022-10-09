@@ -5,11 +5,45 @@
              StartupUri="View/MainWindow.xaml" >
     <Application.Resources>
 
-        <Style x:Key="RetroGaming">
+        <Style x:Key="RetroGaming" x:Name="RetroGaming">
+            
             <Setter Property="TextElement.FontFamily"
                     Value="/Fontes/#Retro Gaming"/>
             
         </Style>
 
+        
+        <Style x:Key="Lbl_Retro" TargetType="Label"  BasedOn="{StaticResource RetroGaming}">
+            
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+            
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+            
+        </Style>
+
+
+        <Style x:Key="Btn_Retro" TargetType="Button" BasedOn="{StaticResource RetroGaming}">
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="Background"
+                    Value="Transparent"/>
+
+            <Setter Property="BorderBrush"
+                    Value="Transparent"/>
+
+        </Style>
     </Application.Resources>
 </Application>
