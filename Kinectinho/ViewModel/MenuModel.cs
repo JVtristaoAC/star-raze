@@ -15,9 +15,9 @@ namespace Kinectinho.ViewModel
             public MenuModel()
             {
                 DancasDAB = new System.Collections.ObjectModel.ObservableCollection<Model.Danca>();
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança da Mãozinha", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/mao.jpg"), Carroussel = 1 });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 2", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/psy.jpg"), Carroussel = 2 });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 3", ImageSource = new Uri(System.Environment.CurrentDirectory + "/resources/dinamite.jpg"), Carroussel = 3 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança da Mãozinha", ImageSource = new Uri(System.Environment.CurrentDirectory + "/Resources/mao.jpg"), Carroussel = 1 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança 2", ImageSource = new Uri(System.Environment.CurrentDirectory + "/Resources/psy.jpg"), Carroussel = 2 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dança 3", ImageSource = new Uri(System.Environment.CurrentDirectory + "/Resources/dinamite.jpg"), Carroussel = 3 });
 
 
                 SelectedDancaDAB = DancasDAB[0];

@@ -91,7 +91,7 @@
     <Compile Include="View\TelaPontos.xaml.cs">
       <DependentUpon>TelaPontos.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -99,7 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -146,94 +146,49 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bin\Debug\resources\Retro Gaming.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="View\Retro Gaming.ttf" />
+    <Resource Include="Fontes\Retro Gaming.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="bin\Debug\resources\DancaMao.mp3" />
-    <None Include="bin\Debug\resources\dinamite.jpg" />
-    <None Include="bin\Debug\resources\Ferramentas.gif" />
-    <None Include="bin\Debug\resources\inicio.gif" />
-    <None Include="bin\Debug\resources\mao.jpg" />
-    <None Include="bin\Debug\resources\psy.jpg" />
-    <None Include="bin\Debug\resources\selecao.gif" />
-    <None Include="bin\Debug\resources\TelaDinamite.jpg" />
-    <None Include="bin\Debug\resources\TelaMao.jpg" />
-    <None Include="bin\Debug\resources\TelaOculos.jpg" />
-    <None Include="bin\Debug\View\Imagens\dinamite.jpg" />
-    <None Include="bin\Debug\View\Imagens\Ferramentas.gif" />
-    <None Include="bin\Debug\View\Imagens\inicio.gif" />
-    <None Include="bin\Debug\View\Imagens\mao.jpg" />
-    <None Include="bin\Debug\View\Imagens\psy.jpg" />
-    <None Include="bin\Debug\View\Imagens\selecao.gif" />
-    <None Include="bin\Debug\View\Imagens\TelaDinamite.jpg" />
-    <None Include="bin\Debug\View\Imagens\TelaMao.jpg" />
-    <None Include="bin\Debug\View\Imagens\TelaOculos.jpg" />
-    <Resource Include="Resources\inicio.gif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Ferramentas.gif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\dinamite.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\mao.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\psy.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\selecao.gif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\TelaDinamite.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\TelaMao.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\TelaOculos.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
     <Content Include="View\Dancas\Musicas\DancaMao.mp3" />
     <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
-    <Content Include="View\Imagens\dinamite.jpg">
+    <Resource Include="bin\Debug\Resources\dinamite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\Ferramentas.gif">
+    </Resource>
+    <Resource Include="View\Imagens\Ferramentas.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\inicio.gif">
+    </Resource>
+    <Resource Include="View\Imagens\inicio.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\mao.jpg">
+    </Resource>
+    <Resource Include="bin\Debug\Resources\mao.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\psy.jpg">
+    </Resource>
+    <Resource Include="bin\Debug\Resources\psy.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\selecao.gif">
+    </Resource>
+    <Resource Include="View\Imagens\selecao.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\TelaDinamite.jpg">
+    </Resource>
+    <Resource Include="View\Imagens\TelaDinamite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\TelaMao.jpg">
+    </Resource>
+    <Resource Include="View\Imagens\TelaMao.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="View\Imagens\TelaOculos.jpg">
+    </Resource>
+    <Resource Include="View\Imagens\TelaOculos.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

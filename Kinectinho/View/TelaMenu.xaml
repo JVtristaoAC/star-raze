@@ -14,7 +14,7 @@
                 <VisualBrush>
                 <VisualBrush.Visual>
                     <Image x:Name="Fundo"                         
-                               gif:AnimationBehavior.SourceUri="Resources\selecao.gif"
+                               gif:AnimationBehavior.SourceUri="Imagens\selecao.gif"
                                gif:AnimationBehavior.AutoStart="True"
  
                                />

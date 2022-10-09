@@ -33,14 +33,12 @@ namespace Kinectinho.View
 
             _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
 
-    
-            
-
         }
 
         private void _carouselDABDancas_SelectionChanged(FrameworkElement selectedElement)
         {
             var viewModel = DataContext as ViewModel.MenuModel;
+
             if (viewModel == null)
             {
                 return;

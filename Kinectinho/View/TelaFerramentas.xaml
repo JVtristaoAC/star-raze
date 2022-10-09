@@ -26,7 +26,7 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           gif:AnimationBehavior.SourceUri="Resources\Ferramentas.gif"
+                           gif:AnimationBehavior.SourceUri="Imagens\Ferramentas.gif"
                            gif:AnimationBehavior.AutoStart="True"
                             />
                 </VisualBrush.Visual>
@@ -58,6 +58,6 @@
                 Width="640"/>
         
         <Label Content="" HorizontalAlignment="Left" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="30" Width="118"/>
-        <Button Content="Voltar ao Menu" x:Name="Voltar" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Button Content="Voltar ao Menu" Style="{StaticResource RetroGaming}" x:Name="Voltar" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="48" Width="170" FontSize="20" Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
     </Grid>
 </Window>
