@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 using Microsoft.Kinect;
-using WpfAnimatedGif;
+
 
 namespace Kinectinho.View.Dancas
 {

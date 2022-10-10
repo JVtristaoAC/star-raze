@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Microsoft.Kinect;
-using WpfAnimatedGif;
+
 
 namespace Kinectinho.View
 {

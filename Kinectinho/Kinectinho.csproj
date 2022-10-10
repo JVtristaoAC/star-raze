@@ -52,9 +52,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
-      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
-    </Reference>
     <Reference Include="XamlAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=20a987d8023d9690, processorArchitecture=MSIL">
       <HintPath>..\packages\XamlAnimatedGif.2.0.0\lib\net45\XamlAnimatedGif.dll</HintPath>
     </Reference>
@@ -160,24 +157,33 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="View\Dancas\Musicas\DancaMao.mp3" />
-    <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
-    <Resource Include="bin\Debug\Resources\dinamite.jpg">
+    <Resource Include="View\Dancas\Imagens\dinamite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="View\Dancas\Imagens\mao.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Dancas\Imagens\psy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Dancas\Imagens\Seta_Direita.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Dancas\Imagens\Seta_Esquerda.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Dancas\Imagens\selecao.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="bin\Debug\resources\DancaMao.mp3" />
+    <Resource Include="View\Dancas\Imagens\titulo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
     <Resource Include="View\Dancas\Imagens\Ferramentas.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Dancas\Imagens\inicio.gif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="bin\Debug\Resources\mao.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="bin\Debug\Resources\psy.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="View\Dancas\Imagens\selecao.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Dancas\Imagens\TelaDinamite.jpg">

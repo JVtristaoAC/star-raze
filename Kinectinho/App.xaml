@@ -27,12 +27,12 @@
         </Style>
 
 
-        <Style x:Key="Btn_Retro" TargetType="Button" BasedOn="{StaticResource RetroGaming}">
+        <Style x:Key="Btn_Retro" TargetType="Label" BasedOn="{StaticResource RetroGaming}">
 
-            <Setter Property="HorizontalAlignment"
+            <Setter Property="HorizontalContentAlignment"
                     Value="Center"/>
 
-            <Setter Property="VerticalAlignment"
+            <Setter Property="VerticalContentAlignment"
                     Value="Center"/>
 
             <Setter Property="Foreground"
@@ -43,6 +43,27 @@
 
             <Setter Property="BorderBrush"
                     Value="Transparent"/>
+            
+            <Setter Property="BorderThickness"
+                    Value="3"/>
+            
+            <Setter Property="Cursor"
+                    Value="Hand"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                    <Setter Property="Foreground"
+                            Value="OrangeRed"/>
+
+                    <Setter Property="BorderBrush" 
+                            Value="Transparent"/>
+
+                    <Setter Property="Opacity" 
+                            Value="0.85"/>
+                </Trigger>
+
+            </Style.Triggers>
 
         </Style>
     </Application.Resources>

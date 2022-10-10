@@ -25,22 +25,23 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="StarRaze" FontSize="72" Grid.ColumnSpan="2" Style="{StaticResource Lbl_Retro}" />
+        <Label Content="Jogar" x:Name="Jogar" Grid.Row="1" FontSize="50"          
+                PreviewMouseDown="Jogar_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
 
-        <Button Content="Jogar" x:Name="Jogar" Grid.Row="1" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"         Click="Jogar_Click" Style="{StaticResource Btn_Retro}" />
+        <Label Content="Configurações" x:Name="Configurar" Grid.Row="2"  FontSize="50" 
+                PreviewMouseDown="Configurar_Click" Style="{StaticResource Btn_Retro}" />
 
-        <Button Content="Configurações" x:Name="Configurar" Grid.Row="2" Height="48" Width="206" FontSize="20" Background="Transparent"                       BorderBrush="Transparent" Click="Configurar_Click" Style="{StaticResource Btn_Retro}" />
-
-        <Button Content="Sair" x:Name="Sair" Grid.Row="3" Height="48" Width="118" FontSize="20" Background="Transparent" BorderBrush="Transparent"           Click="Sair_Click" Style="{StaticResource Btn_Retro}" />
+        <Label Content="Sair" x:Name="Sair" Grid.Row="3"  FontSize="50" 
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" />
 
 
 

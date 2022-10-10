@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 
-using WpfAnimatedGif;
+
 
 namespace Kinectinho.View
 {
@@ -32,6 +32,7 @@ namespace Kinectinho.View
             DataContext = new ViewModel.MenuModel();
 
             _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
+            
 
         }
 
@@ -86,6 +87,7 @@ namespace Kinectinho.View
                         Dancas.Danca1 janela1 = new Dancas.Danca1();
                         janela1.Show();
                         this.Close();
+                   
                     break;
                     case 2:
                         Dancas.Danca2 janela2 = new Dancas.Danca2();

@@ -12,7 +12,7 @@
         Background="Purple">
     <Grid>
         <Grid.Background>
-                <VisualBrush>
+            <VisualBrush>
                 <VisualBrush.Visual>
                     <Image x:Name="Fundo"                         
                                gif:AnimationBehavior.SourceUri="Dancas\Imagens\selecao.gif"
@@ -20,40 +20,47 @@
  
                                />
 
-                    </VisualBrush.Visual>
-                </VisualBrush>
-            </Grid.Background>
-            
-            <Grid.ColumnDefinitions>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="700"/>
+            <ColumnDefinition Width="650"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="500"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Content="&gt;" x:Name="Proximo" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="148" Width="118" FontSize="100"  Background="Transparent" BorderBrush="Transparent" Click="Proximo_Click" Foreground="White"/>
-        
-        <Button Content="&lt;" x:Name="Anterior" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Height="148" Width="118" FontSize="100" Background="Transparent" BorderBrush="Transparent" Click="Anterior_Click" Foreground="White"/>
-        
-        <Label Grid.Row="0" Grid.Column="1" Content="{Binding SelectedDancaDAB.Nome}" FontSize="32" VerticalContentAlignment="Bottom"          
-               Style="{StaticResource Lbl_Retro}"/>
-        
+        <Label x:Name="Proximo" Grid.Column="2" Grid.Row="1" Style="{StaticResource Btn_Retro}"  
+                PreviewMouseDown="Proximo_Click" Width="118" Height="167">
+            <Image Source="Dancas/Imagens/Seta_Direita.png" />
+        </Label>
+
+        <Label x:Name="Anterior" Grid.Column="0" Grid.Row="1" Style="{StaticResource Btn_Retro}"  
+                PreviewMouseDown="Anterior_Click" Width="118" Height="167">
+            <Image Source="Dancas/Imagens/Seta_Esquerda.png"/>
+        </Label>
+
+        <Label Grid.Row="0" Grid.Column="1" Content="{Binding SelectedDancaDAB.Nome}" FontSize="32" 
+               VerticalContentAlignment="Bottom" Style="{StaticResource Lbl_Retro}"/>
+
         <CarouselControl:CarouselControl  Grid.Row="1" Grid.Column="1" x:Name="_carouselDABDancas" ItemsSource="{Binding DancasDAB}" SelectedItem="{Binding SelectedDancaDAB,Mode=TwoWay}" ShowRotation="True" TiltInDegrees="10" AutoSizeToParent="true" RotationSpeed="100" VerticalOrientation="False" HorizontalAlignment="Center" VerticalAlignment="Center" Scale="0.5">
-            
+
             <CarouselControl:CarouselControl.Style>
                 <Style TargetType="CarouselControl:CarouselControl">
                     <Setter Property="CarouselItemTemplate" >
                         <Setter.Value>
                             <ControlTemplate>
                                 <Grid>
-                                    <Button Click="Button_Click" Style="{StaticResource Btn_Retro}">
-                                        <Image Grid.Row="0" Source="{Binding ImageSource}" VerticalAlignment="Center" HorizontalAlignment="Center" Height="300"/>
-                                    </Button>
+                                    <Label PreviewMouseDown="Button_Click" Style="{StaticResource Btn_Retro}">
+                                        <Image Grid.Row="0" x:Name="Img_Carrossel" Source="{Binding ImageSource}" VerticalAlignment="Center"    
+                                               HorizontalAlignment="Center" Height="300"/>
+                                    </Label>
                                 </Grid>
                             </ControlTemplate>
                         </Setter.Value>
@@ -61,11 +68,11 @@
                 </Style>
             </CarouselControl:CarouselControl.Style>
         </CarouselControl:CarouselControl>
-        
-        <Button Content="Voltar ao Menu" x:Name="Voltar" Grid.Column="0" Grid.Row="2" FontSize="20" Click="Voltar_Click" 
+
+        <Label Content="Voltar ao Menu" x:Name="Voltar" Grid.Column="0" Grid.Row="2" FontSize="30" PreviewMouseDown="Voltar_Click" 
                 Style="{StaticResource Btn_Retro}"/>
-        
-        <Button Content="Jogar" x:Name="Jogar" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" FontSize="20" Click="Button_Click" 
+
+        <Label Content="Jogar" x:Name="Jogar" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" FontSize="50" PreviewMouseDown="Button_Click" 
                 Style="{StaticResource Btn_Retro}"/>
     </Grid>
 

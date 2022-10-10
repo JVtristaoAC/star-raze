@@ -12,7 +12,7 @@ namespace Kinectinho.Model
     public class Danca
     {
         public string Nome { get; set; }
-        public System.Uri ImageSource { get; set; }
+        public string ImageSource { get; set; }
         public int Carroussel { get; set; }
     }
 }

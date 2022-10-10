@@ -13,12 +13,12 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="640"/>
+            <ColumnDefinition Width="650"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="400"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
@@ -37,7 +37,7 @@
         <Label Content="Volume" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource Lbl_Retro}"/>
         <Label Content="" HorizontalAlignment="Left" Margin="50" FontSize="30" Style="{StaticResource Lbl_Retro}" Grid.Row="1"/>
         <Slider	x:Name="Volume_Copy"
-            Height="300"
+            Height="350"
             HorizontalAlignment="Center" VerticalAlignment="Center"
             Orientation="Vertical"
             Grid.Row="1"
@@ -48,7 +48,7 @@
         
         <Slider	
             x:Name="Angulo"
-            Height="300"
+            Height="350"
             Grid.Column="2" Grid.Row="1"
             HorizontalAlignment="Center" VerticalAlignment="Center"
             Orientation="Vertical"
@@ -60,9 +60,9 @@
         <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Left" 
                 Grid.Column="1" Grid.Row="1"
-                Width="640"/>
+                Width="650"/>
 
         
-        <Button Content="Voltar ao Menu" Style="{StaticResource Btn_Retro}" x:Name="Voltar" Grid.Row="2" FontSize="20" Click="Voltar_Click"/>
+        <Label Content="Voltar ao Menu" Style="{StaticResource Btn_Retro}" x:Name="Voltar" Grid.Row="2" FontSize="30" PreviewMouseDown="Voltar_Click"/>
     </Grid>
 </Window>
