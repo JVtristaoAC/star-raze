@@ -11,7 +11,8 @@
         WindowState="Maximized"
         Loaded="Window_Loaded"
         Background="Purple"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Dancas/Imagens/icone.png">
 
     <Grid>
         <Grid.Background>
@@ -28,13 +29,13 @@
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="Dancas/Imagens/titulo.png" Margin="30" Opacity="0.9"/>
+        <!--<Image Source="Dancas/Imagens/titulo.png" Margin="30" Opacity="0.9"/>-->
         <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
                 PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
         

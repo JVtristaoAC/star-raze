@@ -179,6 +179,7 @@
     <Resource Include="View\Dancas\Imagens\titulo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="View\Dancas\Imagens\icone.png" />
     <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
     <Resource Include="View\Dancas\Imagens\Ferramentas.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
