@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded"
-        Background="Purple">
+        Background="Purple"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -52,5 +53,8 @@
         <Label Content="Voltar ao menu" x:Name="Voltar" FontSize="30" Grid.Row="2" Grid.ColumnSpan="1" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}"/>
         <Label x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click"
                 Style="{StaticResource Btn_Retro}"/>
+        
+        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
     </Grid>
 </Window>

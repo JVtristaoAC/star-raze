@@ -41,6 +41,10 @@ namespace Kinectinho.View
 
 
         }
+        private void Sair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
         public static KinectSensor InicializarPrimeiroSensor(int anguloElevacaoInicial)
         {
@@ -63,10 +67,10 @@ namespace Kinectinho.View
 
             // Vinculando aos eventos para exeibir o esqueleto do usuário na tela de "espelho" canvas
             kinect.DepthStream.Enable();
+            kinect.DepthFrameReady += kinect_DepthFrameReady;
             kinect.SkeletonStream.Enable();
-            kinect.ColorStream.Enable();
-            kinect.AllFramesReady += AllFramesReady;
-          
+
+
         }
 
         private void KinectEvent(object sender, SkeletonFrameReadyEventArgs e)
@@ -85,45 +89,18 @@ namespace Kinectinho.View
         /**
        * Desenhar o esqueleto do usuário.
        */
-        void AllFramesReady(object sender, AllFramesReadyEventArgs e)
+
+        private void kinect_DepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
         {
-            byte[] imagem = ObterImagemSensorRGB(e.OpenColorImageFrame());
-
-            using (ColorImageFrame visualizacao = e.OpenColorImageFrame())
-            {
-                ReconhecerDistancia(e.OpenDepthImageFrame(), imagem, 2000);
-                if (visualizacao == null) return;
-
-                if (info_cores_sensor_kinect == null)
-                    info_cores_sensor_kinect = new byte[visualizacao.PixelDataLength];
-
-                visualizacao.CopyPixelDataTo(info_cores_sensor_kinect);
-
-                if (bmp_rgb_cores == null)
-                {
-                    this.bmp_rgb_cores = new WriteableBitmap(
-                        visualizacao.Width,
-                        visualizacao.Height,
-                        96,
-                        96,
-                        PixelFormats.Bgr32,
-                        null);
-                }
-
-                this.bmp_rgb_cores.WritePixels(new Int32Rect(0, 0, visualizacao.Width, visualizacao.Height), info_cores_sensor_kinect, visualizacao.Width * visualizacao.BytesPerPixel, 0);
-                if (imagem != null)
-                    esqueletobugado.Background =
-                    new ImageBrush(
-                        BitmapSource.Create(kinect.ColorStream.FrameWidth, kinect.ColorStream.FrameHeight,
-                        96, 96, PixelFormats.Bgr32, null, imagem,
-                        kinect.ColorStream.FrameWidth * kinect.ColorStream.FrameBytesPerPixel
-                                        ));
-
-                
-            }
+            esqueletobugado.Background = new ImageBrush(ReconhecerHumanos(e.OpenDepthImageFrame()));
         }
 
-        private byte[] ObterImagemSensorRGB(ColorImageFrame quadro)
+        private void kinect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        {
+            esqueletobugado.Background = new ImageBrush(ObterImagemSensorRGB(e.OpenColorImageFrame()));
+        }
+
+        private BitmapSource ObterImagemSensorRGB(ColorImageFrame quadro)
         {
             if (quadro == null) return null;
 
@@ -132,38 +109,43 @@ namespace Kinectinho.View
                 byte[] bytesImagem = new byte[quadro.PixelDataLength];
                 quadro.CopyPixelDataTo(bytesImagem);
 
-                return bytesImagem;
+               
+                    for (int indice = 0; indice < bytesImagem.Length; indice += quadro.BytesPerPixel)
+                    {
+                        byte maiorValorCor = Math.Max(bytesImagem[indice], Math.Max(bytesImagem[indice + 1], bytesImagem[indice + 2]));
+
+                        bytesImagem[indice] = maiorValorCor;
+                        bytesImagem[indice + 1] = maiorValorCor;
+                        bytesImagem[indice + 2] = maiorValorCor;
+                    }
+
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * quadro.BytesPerPixel);
             }
         }
 
-        private void ReconhecerDistancia(DepthImageFrame quadro, byte[] bytesImagem, int distanciaMaxima)
+
+        private BitmapSource ReconhecerHumanos(DepthImageFrame quadro)
         {
-            if (quadro == null || bytesImagem == null) return;
+            if (quadro == null) return null;
 
             using (quadro)
             {
                 DepthImagePixel[] imagemProfundidade = new DepthImagePixel[quadro.PixelDataLength];
                 quadro.CopyDepthImagePixelDataTo(imagemProfundidade);
 
-                DepthImagePoint[] pontosImagemProfundidade = new DepthImagePoint[640 * 480];
-                kinect.CoordinateMapper.MapColorFrameToDepthFrame(kinect.ColorStream.Format, kinect.DepthStream.Format, imagemProfundidade, pontosImagemProfundidade);
+                byte[] bytesImagem = new byte[imagemProfundidade.Length * 4];
 
-                for (int i = 0; i < pontosImagemProfundidade.Length; i++)
+                for (int indice = 0; indice < bytesImagem.Length; indice += 4)
                 {
-                    var point = pontosImagemProfundidade[i];
-                    if (point.Depth < distanciaMaxima && KinectSensor.IsKnownPoint(point))
+                    if (imagemProfundidade[indice / 4].PlayerIndex != 0)
                     {
-                        var pixelDataIndex = i * 4;
-
-                        byte maiorValorCor = Math.Max(bytesImagem[pixelDataIndex], Math.Max(bytesImagem[pixelDataIndex], bytesImagem[pixelDataIndex + 2]));
-
-                        bytesImagem[pixelDataIndex] = maiorValorCor;
-                        bytesImagem[pixelDataIndex] = maiorValorCor;
-                        bytesImagem[pixelDataIndex + 2] = maiorValorCor;
+                        bytesImagem[indice + 1] = 255;
                     }
                 }
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * 4);
             }
         }
+
 
         private void Angulo_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {

@@ -35,6 +35,10 @@ namespace Kinectinho.View
             
 
         }
+        private void Sair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
         private void _carouselDABDancas_SelectionChanged(FrameworkElement selectedElement)
         {

@@ -9,7 +9,8 @@
         Title="Dinamite" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        Background="Purple">
+        Background="Purple"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -26,5 +27,8 @@
         
         <Label Content="Danca 3"/>
         <Button Content="Voltar ao Menu de seleção" x:Name="Voltar" HorizontalAlignment="Left" Margin="243,217,0,0" VerticalAlignment="Top" Height="48" Width="263" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        
+        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
     </Grid>
 </Window>

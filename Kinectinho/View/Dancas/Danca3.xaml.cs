@@ -24,6 +24,11 @@ namespace Kinectinho.View.Dancas
             InitializeComponent();
         }
 
+        private void Sair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
             

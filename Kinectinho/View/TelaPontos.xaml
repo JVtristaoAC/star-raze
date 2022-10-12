@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
-        Title="TelaPontos" Height="450" Width="800">
+        Title="TelaPontos" Height="450" Width="800"
+        WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,7 +19,9 @@
             <RowDefinition/>
 
         </Grid.RowDefinitions>
-
+        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+        
         <Label Content="Sua Pontuação foi de:" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
         <Label Content="1000" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
         <Button Content="Jogar de novo" Click="btnRepetir_Click" x:Name="btnRepetir" Grid.Column="1" Grid.Row="1" Width="100" Height="25" />

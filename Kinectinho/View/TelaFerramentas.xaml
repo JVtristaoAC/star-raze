@@ -9,7 +9,8 @@
         Title="Configurações" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        Background="Purple">
+        Background="Purple"
+        WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -33,6 +34,8 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
+        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
         
         <Label Content="Volume" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource Lbl_Retro}"/>
         <Label Content="" HorizontalAlignment="Left" Margin="50" FontSize="30" Style="{StaticResource Lbl_Retro}" Grid.Row="1"/>

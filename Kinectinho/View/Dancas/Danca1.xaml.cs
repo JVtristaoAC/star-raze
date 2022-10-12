@@ -43,13 +43,17 @@ namespace Kinectinho.View.Dancas
 
         }
 
-        public static KinectSensor InicializarPrimeiroSensor(int anguloElevacaoInicial)
+        private void Sair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public static KinectSensor InicializarPrimeiroSensor()
         {
 
             KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
 
             kinect.Start();
-            kinect.ElevationAngle = anguloElevacaoInicial;
 
             return kinect;
 
@@ -59,8 +63,7 @@ namespace Kinectinho.View.Dancas
 
         private void InicializarSensor()
         {
-            // Inicializando o kinect no angulo 0.
-            kinect = InicializarPrimeiroSensor(0);
+            kinect = InicializarPrimeiroSensor();
             kinect.SkeletonStream.Enable();
 
             // Vinculando aos eventos para exeibir o esqueleto do usuário na tela de "espelho" canvas

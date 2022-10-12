@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded"
-        Background="Purple">
+        Background="Purple"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -27,5 +28,8 @@
         
         <Label Content="Danca 2"/>
         <Button Content="Voltar ao Menu de selação" x:Name="Voltar" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="48" Width="264" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
+        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
+                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+        
     </Grid>
 </Window>
