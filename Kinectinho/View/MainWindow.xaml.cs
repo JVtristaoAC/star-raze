@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Microsoft.Kinect;
 
 
 namespace Kinectinho
@@ -44,10 +44,17 @@ namespace Kinectinho
 
         private void Configurar_Click(object sender, RoutedEventArgs e)
         {
-           
-            View.TelaFerramentas janela = new View.TelaFerramentas();
-            janela.Show();
-            this.Close();
+            try
+            {
+                KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
+                View.TelaFerramentas janela = new View.TelaFerramentas();
+                janela.Show();
+                this.Close();
+            }
+            catch 
+            {
+                MessageBox.Show("Não foi possivel carregar Ferramentas", "Kinect Não Conectado");
+            }
         }
 
         private void Sair_Click(object sender, RoutedEventArgs e)

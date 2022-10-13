@@ -25,14 +25,16 @@ namespace Kinectinho.View
     /// </summary>
     public partial class TelaMenu : Window
     {
-        
+
         public TelaMenu()
         {
             InitializeComponent();
             DataContext = new ViewModel.MenuModel();
 
             _carouselDABDancas.SelectionChanged += _carouselDABDancas_SelectionChanged;
-            
+
+           
+
 
         }
         private void Sair_Click(object sender, RoutedEventArgs e)
@@ -84,28 +86,40 @@ namespace Kinectinho.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = DataContext as ViewModel.MenuModel;
+
+            try
+            {
+                KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
+                var viewModel = DataContext as ViewModel.MenuModel;
                 switch (viewModel.SelectedDancaDAB.Carroussel)
                 {
                     case 1:
                         Dancas.Danca1 janela1 = new Dancas.Danca1();
                         janela1.Show();
                         this.Close();
-                   
-                    break;
+
+                        break;
                     case 2:
                         Dancas.Danca2 janela2 = new Dancas.Danca2();
                         janela2.Show();
                         this.Close();
-                    break;
+                        break;
 
                     case 3:
                         Dancas.Danca3 janela3 = new Dancas.Danca3();
                         janela3.Show();
                         this.Close();
-                    break;
+                        break;
 
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possivel carregar a Danca", "Kinect Não Conectado");
+            }
+            
+
+           
            
 
         }
