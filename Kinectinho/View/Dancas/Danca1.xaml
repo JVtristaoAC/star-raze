@@ -11,7 +11,8 @@
         WindowState="Maximized"
         Loaded="Window_Loaded"
         Background="Purple"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Imagens/icone.png">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -56,5 +57,8 @@
         
         <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
                 PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+        
+        <Label Content="-" x:Name="Min" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="100"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-30,50,0"      
+                PreviewMouseDown="Minimizar_Click"  Style="{StaticResource Btn_Retro}" Cursor="Hand" />
     </Grid>
 </Window>

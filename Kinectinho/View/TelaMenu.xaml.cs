@@ -37,6 +37,14 @@ namespace Kinectinho.View
 
 
         }
+
+        private void Minimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+
+        }
+
         private void Sair_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -81,7 +89,6 @@ namespace Kinectinho.View
            
         }
 
-     
         
 
         private void Button_Click(object sender, RoutedEventArgs e)

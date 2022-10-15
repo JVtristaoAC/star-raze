@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,20 +25,21 @@ namespace Kinectinho.View
     public partial class TelaFerramentas : Window
     {
         KinectSensor kinect;
-
-
-
+        
+        
         /**
          * Rastreamento do Esqueleto
          */
         byte[] info_cores_sensor_kinect = null;
         WriteableBitmap bmp_rgb_cores = null;
 
-
+        public BitmapPalette Cor = new BitmapPalette(new List<Color> { Colors.Red });
         public TelaFerramentas()
         {
             InitializeComponent();
             InicializarSensor();
+           
+
 
 
         }
@@ -56,6 +58,12 @@ namespace Kinectinho.View
 
             return kinect;
 
+
+
+        }
+        private void Minimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
 
 
         }
@@ -119,7 +127,7 @@ namespace Kinectinho.View
                         bytesImagem[indice + 2] = maiorValorCor;
                     }
 
-                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * quadro.BytesPerPixel);
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, Cor, bytesImagem, quadro.Width * quadro.BytesPerPixel);
             }
         }
 
@@ -142,7 +150,7 @@ namespace Kinectinho.View
                         bytesImagem[indice + 1] = 255;
                     }
                 }
-                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * 4);
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null , bytesImagem, quadro.Width * 4);
             }
         }
 

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
         Title="TelaPontos" Height="450" Width="800"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Dancas/Imagens/icone.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

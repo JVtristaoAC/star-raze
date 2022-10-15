@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Background="Purple"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Imagens/icone.png">
     <Grid>
         <Grid.Background>
             <VisualBrush>

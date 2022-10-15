@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Background="Purple"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Dancas/Imagens/icone.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -34,8 +35,12 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
+        
         <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
                 PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+        
+        <Label Content="-" x:Name="Min" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="100"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-30,50,0"      
+                PreviewMouseDown="Minimizar_Click"  Style="{StaticResource Btn_Retro}" Cursor="Hand" />
         
         <Label Content="Volume" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource Lbl_Retro}"/>
         <Label Content="" HorizontalAlignment="Left" Margin="50" FontSize="30" Style="{StaticResource Lbl_Retro}" Grid.Row="1"/>
@@ -66,6 +71,6 @@
                 Width="650"/>
 
         
-        <Label Content="Voltar ao Menu" Style="{StaticResource Btn_Retro}" x:Name="Voltar" Grid.Row="2" FontSize="30" PreviewMouseDown="Voltar_Click"/>
+        <Label Content="Voltar ao Menu" Style="{StaticResource Btn_Retro}" x:Name="Voltar" Grid.Row="2" Grid.Column="1" FontSize="30" PreviewMouseDown="Voltar_Click"/>
     </Grid>
 </Window>

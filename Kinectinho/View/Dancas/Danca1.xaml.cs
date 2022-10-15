@@ -43,6 +43,13 @@ namespace Kinectinho.View.Dancas
 
         }
 
+        private void Minimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+
+        }
+
         private void Sair_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -42,6 +42,13 @@ namespace Kinectinho
             
         }
 
+        private void Minimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+
+        }
+
         private void Configurar_Click(object sender, RoutedEventArgs e)
         {
             try

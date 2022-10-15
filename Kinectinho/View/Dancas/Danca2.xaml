@@ -11,7 +11,8 @@
         WindowState="Maximized"
         Loaded="Window_Loaded"
         Background="Purple"
-        WindowStyle="None">
+        WindowStyle="None"
+        Icon="Imagens/icone.png">
     <Grid>
         <Grid.Background>
             <VisualBrush>
