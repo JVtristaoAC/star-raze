@@ -42,7 +42,8 @@
                 HorizontalAlignment="Center" 
                 Grid.Column="1" Grid.Row="1"
                 Width="640" Height="360"
-                Visibility="Hidden"/>
+                Visibility="Hidden"
+                Opacity="0.8"/>
         
         <StackPanel HorizontalAlignment="Right" Height="249" VerticalAlignment="Top" Width="174" Grid.Column="2">
             <Label x:Name="lblMaoDireita" Visibility="Hidden" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>

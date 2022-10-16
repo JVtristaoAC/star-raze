@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -59,9 +60,7 @@ namespace Kinectinho.View.Dancas
         {
 
             KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
-
             kinect.Start();
-
             return kinect;
 
 
@@ -75,8 +74,10 @@ namespace Kinectinho.View.Dancas
 
             // Vinculando aos eventos para exeibir o esqueleto do usuário na tela de "espelho" canvas
             kinect.ColorStream.Enable();
+            kinect.DepthStream.Enable();
+            kinect.DepthFrameReady += kinect_DepthFrameReady;
             kinect.SkeletonFrameReady += SkeletonFrameReady;
-            kinect.ColorFrameReady += ColorFrameReady;
+
 
         }
 
@@ -86,40 +87,67 @@ namespace Kinectinho.View.Dancas
             {
                 if (quadroAtual != null)
                 {
-                    
 
+                    MaosAcimaDaCabeca(quadroAtual);
                 }
             }
         }
 
+        private void kinect_DepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
+        {
+            esqueletobugado.Background = new ImageBrush(ReconhecerHumanos(e.OpenDepthImageFrame()));
+        }
 
+        private void kinect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        {
+            esqueletobugado.Background = new ImageBrush(ObterImagemSensorRGB(e.OpenColorImageFrame()));
+        }
         /**
        * Desenhar o esqueleto do usuário.
        */
-        void ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        private BitmapSource ObterImagemSensorRGB(ColorImageFrame quadro)
         {
-            using (ColorImageFrame visualizacao = e.OpenColorImageFrame())
+            if (quadro == null) return null;
+
+            using (quadro)
             {
-                if (visualizacao == null) return;
+                byte[] bytesImagem = new byte[quadro.PixelDataLength];
+                quadro.CopyPixelDataTo(bytesImagem);
 
-                if (info_cores_sensor_kinect == null)
-                    info_cores_sensor_kinect = new byte[visualizacao.PixelDataLength];
 
-                visualizacao.CopyPixelDataTo(info_cores_sensor_kinect);
-
-                if (bmp_rgb_cores == null)
+                for (int indice = 0; indice < bytesImagem.Length; indice += quadro.BytesPerPixel)
                 {
-                    this.bmp_rgb_cores = new WriteableBitmap(
-                        visualizacao.Width,
-                        visualizacao.Height,
-                        96,
-                        96,
-                        PixelFormats.Bgr32,
-                        null);
+                    byte maiorValorCor = Math.Max(bytesImagem[indice], Math.Max(bytesImagem[indice + 1], bytesImagem[indice + 2]));
+
+                    bytesImagem[indice] = maiorValorCor;
+                    bytesImagem[indice + 1] = maiorValorCor;
+                    bytesImagem[indice + 2] = maiorValorCor;
                 }
 
-                this.bmp_rgb_cores.WritePixels(new Int32Rect(0, 0, visualizacao.Width, visualizacao.Height), info_cores_sensor_kinect, visualizacao.Width * visualizacao.BytesPerPixel, 0);
-                esqueletobugado.Background = new ImageBrush(bmp_rgb_cores);
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * quadro.BytesPerPixel);
+            }
+        }
+
+
+        private BitmapSource ReconhecerHumanos(DepthImageFrame quadro)
+        {
+            if (quadro == null) return null;
+
+            using (quadro)
+            {
+                DepthImagePixel[] imagemProfundidade = new DepthImagePixel[quadro.PixelDataLength];
+                quadro.CopyDepthImagePixelDataTo(imagemProfundidade);
+
+                byte[] bytesImagem = new byte[imagemProfundidade.Length * 4];
+
+                for (int indice = 0; indice < bytesImagem.Length; indice += 4)
+                {
+                    if (imagemProfundidade[indice / 4].PlayerIndex != 0)
+                    {
+                        bytesImagem[indice + 1] = 255;
+                    }
+                }
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null, bytesImagem, quadro.Width * 4);
             }
         }
 
@@ -215,7 +243,7 @@ namespace Kinectinho.View.Dancas
             ColorImagePoint j2P = kinect.CoordinateMapper.MapSkeletonPointToColorPoint(j2.Position, ColorImageFormat.RgbResolution640x480Fps30);
             esp_bones_esqueleto.X2 = j2P.X;
             esp_bones_esqueleto.Y2 = j2P.Y;
-            esqueletobugado.Children.Add(esp_bones_esqueleto);
+            
         }
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
@@ -265,7 +293,7 @@ namespace Kinectinho.View.Dancas
                     if (Testes == true)
                     {
                         Pontos = Pontos + 100;
-
+                        MessageBox.Show("Mao acima da cabeca");
 
 
                     }
