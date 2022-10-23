@@ -64,6 +64,7 @@
     <Compile Include="CarouselControl\CarouselControl.cs" />
     <Compile Include="CarouselControl\ICarouselControl.cs" />
     <Compile Include="Model\Danca.cs" />
+    <Compile Include="Model\Pontuacao.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +80,9 @@
     <Compile Include="View\Dancas\Danca3.xaml.cs">
       <DependentUpon>Danca3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dancas\Danca4.xaml.cs">
+      <DependentUpon>Danca4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaFerramentas.xaml.cs">
       <DependentUpon>TelaFerramentas.xaml</DependentUpon>
     </Compile>
@@ -88,6 +92,10 @@
     <Compile Include="View\TelaPontos.xaml.cs">
       <DependentUpon>TelaPontos.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Dancas\Danca4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,10 +108,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\Dancas\Danca1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,7 +159,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="bin\Debug\resources\Musicas\coconuts.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="bin\Debug\resources\Musicas\KDA.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Dancas\Imagens\rules.jpg" />
     <Resource Include="View\Dancas\Imagens\nome.jpeg" />
@@ -171,7 +182,6 @@
     <Resource Include="View\Dancas\Imagens\selecao.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="bin\Debug\resources\DancaMao.mp3" />
     <Resource Include="View\Dancas\Imagens\titulo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -191,6 +201,17 @@
     <Resource Include="View\Dancas\Imagens\TelaOculos.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Dancas\Imagens\Play.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Dancas\Imagens\botao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\resources\Musicas\69.mp4" />
+    <Resource Include="View\Dancas\Imagens\Pontos.jpg" />
+    <Resource Include="View\Dancas\Imagens\Pontos.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

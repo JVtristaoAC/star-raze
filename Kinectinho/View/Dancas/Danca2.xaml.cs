@@ -1,4 +1,5 @@
-﻿using Microsoft.Kinect;
+﻿using Kinectinho.Model;
+using Microsoft.Kinect;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,59 +54,59 @@ namespace Kinectinho.View.Dancas
                 {
                     if (Video.Source != null)
                     {
-                        if (Segundos >= 12 && Segundos <= 14)
+                        if (Segundos >= 14 && Segundos <= 16)
                             //1 -
                             MaosAcima(quadroAtual);
 
-                        if (Segundos >= 14 && Segundos <= 16)
+                        if (Segundos >= 16 && Segundos <= 18)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if (Segundos >= 17 && Segundos <= 25)
+                        if (Segundos >= 19 && Segundos <= 27)
                             //3 -
                             MaoEsqDirAcima(quadroAtual);
 
-                        if (Segundos >=25  && Segundos <=30)
+                        if (Segundos >=27  && Segundos <=32)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if(Segundos >=36  && Segundos <=42)
+                        if(Segundos >=38  && Segundos <=44)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if(Segundos >=50  && Segundos <=48)
+                        if(Segundos >=52  && Segundos <=58)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if (Segundos >=60  && Segundos <=68)
+                        if (Segundos >=62  && Segundos <=70)
                             //4 -
                             MaosEsticadaEsqDir(quadroAtual);
 
-                        if(Segundos >=68  && Segundos <=84)
+                        if(Segundos >=70  && Segundos <=86)
                             //1 -
                             MaosAcima(quadroAtual);
 
-                        if(Segundos >=85  && Segundos <=94)
+                        if(Segundos >=87  && Segundos <=96)
                             //4 -
                              MaosEsticadaEsqDir(quadroAtual);
 
-                        if(Segundos >=97  && Segundos <=103)
+                        if(Segundos >=99  && Segundos <=105)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if(Segundos >=119  && Segundos <=127)
+                        if(Segundos >=121  && Segundos <=129)
                             //2 -
                             MaosEsticadas(quadroAtual);
 
-                        if (Segundos >= 128 && Segundos <= 135)
+                        if (Segundos >= 130 && Segundos <= 137)
                             //4 -
                             MaosEsticadaEsqDir(quadroAtual);
 
-                        if (Segundos >=136  && Segundos <=150)
+                        if (Segundos >=138  && Segundos <=152)
                             //1 -
                             MaosAcima(quadroAtual);
 
-                        if(Segundos >=154  && Segundos <=1163)
+                        if(Segundos >=156  && Segundos <=163)
                             //4 -
                             MaosEsticadaEsqDir(quadroAtual);
                     }
@@ -135,8 +136,8 @@ namespace Kinectinho.View.Dancas
                     Testes = novoTesteMaoAcimaCabeca;
                     if (Testes == true)
                     {
-                        Pontos = Pontos + 100;
-                        MessageBox.Show("Mao acima da cabeca");
+                        Pontos = Pontos + 50;
+                        
 
 
                     }
@@ -168,9 +169,9 @@ namespace Kinectinho.View.Dancas
                     Testes = novoTesteMaosEsticada;
                     if (Testes == true)
                     {
-                        Pontos = Pontos + 100;
+                        Pontos = Pontos + 50;
 
-                        MessageBox.Show("Maos Esticadas");
+                        
                     }
                     else
                     {
@@ -202,8 +203,8 @@ namespace Kinectinho.View.Dancas
                     Testes = novoTesteMaoAcimaCabeca;
                     if (Testes == true)
                     {
-                        Pontos = Pontos + 100;
-                        MessageBox.Show("Mao Direita ou Esquerda acima da cabeca");
+                        Pontos = Pontos + 50;
+                        
 
 
                     }
@@ -232,8 +233,8 @@ namespace Kinectinho.View.Dancas
                     Testes = novoTesteMaoDirEsticada;
                     if (Testes == true)
                     {
-                        Pontos = Pontos + 100;
-                        MessageBox.Show("Maos Para a esquerda ou direita");
+                        Pontos = Pontos + 50;
+                       
                     }
                     else
                     {
@@ -254,9 +255,7 @@ namespace Kinectinho.View.Dancas
         {
             esqueletobugado.Background = new ImageBrush(ObterImagemSensorRGB(e.OpenColorImageFrame()));
         }
-        /**
-       * Desenhar o esqueleto do usuário.
-       */
+
         private BitmapSource ObterImagemSensorRGB(ColorImageFrame quadro)
         {
             if (quadro == null) return null;
@@ -329,6 +328,7 @@ namespace Kinectinho.View.Dancas
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {
+            Pontuacao.Pontos = Pontos;
             MessageBox.Show("A musica acabou");
 
             TelaPontos janela = new TelaPontos();
@@ -412,6 +412,8 @@ namespace Kinectinho.View.Dancas
             timer.Start();
             esqueletobugado.Visibility = Visibility.Visible;
             btnIniciar.Visibility = Visibility.Hidden;
+            Borda.Visibility = Visibility.Visible;
+            Voltar.Visibility = Visibility.Hidden;
 
         }
 
@@ -427,6 +429,7 @@ namespace Kinectinho.View.Dancas
 
         private void Parar_Executar()
         {
+            Pontuacao.Pontos = 0;
             Video.Stop();
             Video.Source = null;
             timer.Stop();

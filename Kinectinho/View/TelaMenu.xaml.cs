@@ -119,8 +119,8 @@ namespace Kinectinho.View
                         break;
 
                     case 4:
-                        //Dancas.Danca4 janela4 = new Dancas.Danca4();
-                        //janela4.Show();
+                        Dancas.Danca4 janela4 = new Dancas.Danca4();
+                        janela4.Show();
                         this.Close();
                         break;
 

@@ -19,7 +19,7 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           gif:AnimationBehavior.SourceUri="Imagens\TelaMao.jpg"
+                           gif:AnimationBehavior.SourceUri="Imagens\Play.jpeg"
                            gif:AnimationBehavior.AutoStart="True"
                            />
 
@@ -39,7 +39,7 @@
         </Grid.RowDefinitions>
 
         <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="Video" LoadedBehavior="Manual" UnloadedBehavior="Manual"/>
-        <Border BorderBrush="Purple" BorderThickness="10" CornerRadius="2" Width="210" Height="170">
+        <Border BorderBrush="Purple" BorderThickness="5" CornerRadius="2" Width="205" Height="165" Visibility="Hidden" x:Name="Borda">
             <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Center" 
                 Grid.Column="0" Grid.Row="0"
@@ -49,16 +49,11 @@
         </Border>
 
 
-        <StackPanel HorizontalAlignment="Right" Height="249" VerticalAlignment="Top" Width="174" Grid.Column="2">
-            <Label x:Name="lblMaoDireita" Visibility="Hidden" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
-            <Label x:Name="lblMaoEsquerda"  Visibility="Hidden" Content="Mão Esquerda Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
-            <Label x:Name="lblMaoDireitaEsquerda" Visibility="Hidden" Content="Mão Direita pra Esquerda" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
-            <Label x:Name="lblMaoEsquerdaDireita"  Visibility="Hidden" Content="Mão Esquerda pra Direita" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
-        </StackPanel>
-
         <Label Content="X" x:Name="Voltar" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}" Grid.Column="2"/>
-        <Label x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click"
-                Style="{StaticResource Btn_Retro}"/>
+
+        <Label  x:Name="btnIniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click" Style="{StaticResource Btn_Retro}">
+            <Image Source="Imagens\botao.png" Width="200" Margin="30,0,0,0" />
+        </Label>
 
     </Grid>
 </Window>

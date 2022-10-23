@@ -5,28 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View"
         mc:Ignorable="d"
-        Title="TelaPontos" Height="450" Width="800"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        Title="TelaPontos"  Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="Purple"
         WindowStyle="None"
         Icon="Dancas/Imagens/icone.png">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
 
+                    <Image x:Name="Fundo"
+                          Source="Dancas\Imagens\Pontos.jpg"
+                           />
+
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
                 PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
-        
-        <Label Content="Sua Pontuação foi de:" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
-        <Label Content="1000" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Button Content="Jogar de novo" Click="btnRepetir_Click" x:Name="btnRepetir" Grid.Column="1" Grid.Row="1" Width="100" Height="25" />
-        <Button Content="Menu de Escolha" Click="btnEscolha_Click" x:Name="btnEscolha" Grid.Column="1" Grid.Row="1" Width="100" Height="25" Margin="0,0,0,70"/>
+
+        <Label Content="-" x:Name="Min" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="100"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-30,50,0"      
+                PreviewMouseDown="Minimizar_Click"  Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+
+        <Label Content="Sua Pontuação foi de:" Grid.Row="0" FontSize="50" VerticalAlignment="Top" Margin="70"     
+               Style="{StaticResource Lbl_Retro}"/>
+
+        <Label Content="6400" Grid.Row="0" FontSize="50" x:Name="lbl_Pontos"  Style="{StaticResource Lbl_Retro}" Margin="70" 
+               VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="Orange"/>
+
+        <Label Content="Jogar de Novo" x:Name="Jogar" Grid.Row="1" FontSize="50"          
+                PreviewMouseDown="btnRepetir_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+
+        <Label Content="Menu de Escolha" x:Name="Escolha" Grid.Row="2"  FontSize="50" 
+                PreviewMouseDown="btnEscolha_Click" Style="{StaticResource Btn_Retro}" />
+
+
 
     </Grid>
 </Window>

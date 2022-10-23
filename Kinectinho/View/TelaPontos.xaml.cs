@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kinectinho.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,14 +23,23 @@ namespace Kinectinho.View
         public TelaPontos()
         {
             InitializeComponent();
+            lbl_Pontos.Content = Pontuacao.Pontos.ToString();
+        }
+        private void Minimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+
         }
         private void Sair_Click(object sender, RoutedEventArgs e)
         {
+            Pontuacao.Pontos = 0;
             this.Close();
         }
 
         private void btnRepetir_Click(object sender, RoutedEventArgs e)
         {
+            Pontuacao.Pontos = 0;
             Dancas.Danca1 janela = new Dancas.Danca1();
             janela.Show();
             this.Close();
@@ -37,6 +47,7 @@ namespace Kinectinho.View
 
         private void btnEscolha_Click(object sender, RoutedEventArgs e)
         {
+            Pontuacao.Pontos = 0;
             TelaMenu janela = new TelaMenu();
             janela.Show();
             this.Close();

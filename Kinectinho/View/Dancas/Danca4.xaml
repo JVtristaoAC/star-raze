@@ -1,19 +1,18 @@
-﻿<Window x:Class="Kinectinho.View.Dancas.Danca1"
+﻿<Window x:Class="Kinectinho.View.Dancas.Danca4"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinectinho.View.Dancas"
-        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+         xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
         mc:Ignorable="d"
-        Title="Danca da Mãozinha" Height="720" Width="1280"
+        Title="Danca4" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Loaded="Window_Loaded"
         Background="Purple"
         WindowStyle="None"
-        Icon="Imagens/icone.png"
-        AllowDrop="True">
+        Icon="Imagens/icone.png">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -48,12 +47,13 @@
                 Visibility="Hidden"
                 />
         </Border>
- 
 
         <Label Content="X" x:Name="Voltar" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}" Grid.Column="2"/>
-        
+
         <Label  x:Name="btnIniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click" Style="{StaticResource Btn_Retro}">
-            <Image Source="Imagens\botao.png" Width="200" Margin="30,0,0,0"/>
+            <Image Source="Imagens\botao.png" Width="200" Margin="30,0,0,0" />
         </Label>
+
+
     </Grid>
 </Window>

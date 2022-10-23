@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
+using Kinectinho.Model;
 using Microsoft.Kinect;
 
 
@@ -148,6 +148,7 @@ namespace Kinectinho.View.Dancas
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {
+            Pontuacao.Pontos = Pontos;
             MessageBox.Show("A musica acabou");
 
             TelaPontos janela = new TelaPontos();
@@ -230,9 +231,20 @@ namespace Kinectinho.View.Dancas
 
         private void Parar_Executar()
         {
+            Pontuacao.Pontos = 0;
             Video.Stop();
             Video.Source = null;
             timer.Stop();
+        }
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
+        {
+            Video.Play();
+            timer.Start();
+            esqueletobugado.Visibility = Visibility.Visible;
+            btnIniciar.Visibility = Visibility.Hidden;
+            Borda.Visibility = Visibility.Visible;
+            Voltar.Visibility = Visibility.Hidden;
+
         }
 
         private void KinectEvent(object sender, SkeletonFrameReadyEventArgs e)
@@ -324,21 +336,13 @@ namespace Kinectinho.View.Dancas
                             MaosEsticadaEsqDir(quadroAtual);
 
 
-
+                        
                     }
                 }
             }
         }
 
-        private void btnIniciar_Click(object sender, RoutedEventArgs e)
-        {
-            Video.Play();
-            timer.Start();
-            esqueletobugado.Visibility = Visibility.Visible;
-            btnIniciar.Visibility = Visibility.Hidden;
-
-        }
-
+        
         //1
         private void MaosAcima(SkeletonFrame quadroAtual)
         {
@@ -361,7 +365,7 @@ namespace Kinectinho.View.Dancas
                     if (Testes == true)
                     {
                         Pontos = Pontos + 100;
-                        MessageBox.Show("Mao acima da cabeca");
+                        
 
 
                     }
@@ -392,8 +396,7 @@ namespace Kinectinho.View.Dancas
                     if (Testes == true)
                     {
                         Pontos = Pontos + 100;
-                        MessageBox.Show("Mao Direita ou Esquerda acima da cabeca");
-
+                       
 
                     }
                 }
@@ -426,7 +429,7 @@ namespace Kinectinho.View.Dancas
                     {
                         Pontos = Pontos + 100;
 
-                        MessageBox.Show("Maos Esticadas");
+                       
                     }
                     else
                     {
@@ -471,7 +474,6 @@ namespace Kinectinho.View.Dancas
 
         }
 
-
         //5
         private void MaosEsticadaEsqDir(SkeletonFrame quadroAtual)
         {
@@ -494,7 +496,7 @@ namespace Kinectinho.View.Dancas
                     if (Testes == true)
                     {
                         Pontos = Pontos + 100;
-                        MessageBox.Show("Maos Para a esquerda ou direita");
+                        
                     }
                     else
                     {

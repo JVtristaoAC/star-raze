@@ -1,4 +1,5 @@
-﻿using Microsoft.Kinect;
+﻿using Kinectinho.Model;
+using Microsoft.Kinect;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,20 +27,13 @@ namespace Kinectinho.View.Dancas
         int Segundos, Pontos;
         bool Testes;
 
+
         public Danca3()
         {
             InitializeComponent();
             InicializarSensor();
             Video.MediaEnded += MediaPlayer_MediaEnded;
 
-        }
-
-
-        public static KinectSensor InicializarPrimeiroSensor()
-        {
-            KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
-            kinect.Start();
-            return kinect;
         }
 
         private void InicializarSensor()
@@ -55,7 +49,234 @@ namespace Kinectinho.View.Dancas
             kinect.SkeletonFrameReady += KinectEvent;
 
         }
+        private void KinectEvent(object sender, SkeletonFrameReadyEventArgs e)
+        {
+            using (SkeletonFrame quadroAtual = e.OpenSkeletonFrame())
+            {
+                if (quadroAtual != null)
+                {
+                    if (Video.Source != null)
+                    {
+                       //1 MaosAbaixo(quadroAtual);
+                       //2 MaoEsqDirAcima(quadroAtual);
+                       //3 MaosEsqDirEsticadas(quadroAtual);
+                       //4 MaosEsticadaEsqDir(quadroAtual);
 
+                        if(Segundos >= 12 && Segundos <= 20)
+                            //1 -
+                            MaosAbaixo(quadroAtual);
+
+                        if (Segundos >= 30 && Segundos <= 31)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if (Segundos >= 38 && Segundos <= 48)
+                            //3 -
+                            MaosEsqDirEsticadas(quadroAtual);
+
+                        if(Segundos >= 48 && Segundos <= 53)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 58 && Segundos <= 63)
+                            //4 -
+                            MaosEsticadaEsqDir(quadroAtual);
+
+                        if(Segundos >= 63 && Segundos <= 65)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 65 && Segundos <= 68)
+                            //4 -
+                            MaosEsticadaEsqDir(quadroAtual);
+
+                        if(Segundos >= 71 && Segundos <= 79)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 83 && Segundos <= 90)
+                            //4 OU 1 -
+                            MaosAbaixo(quadroAtual);
+                            MaosEsqDirEsticadas(quadroAtual);
+
+                        if (Segundos >= 92 && Segundos <= 94)
+                            //3 -
+                            MaosEsqDirEsticadas(quadroAtual);
+
+                        if(Segundos >= 95 && Segundos <= 103)
+                           //5 -
+                           MaosEsticadaEsqDir(quadroAtual);
+
+                        if(Segundos >= 106 && Segundos <= 113)
+                            //3 -
+                            MaosEsqDirEsticadas(quadroAtual);
+
+                        if(Segundos >= 118 && Segundos <= 128)
+                            //4 -
+                            MaosEsticadaEsqDir(quadroAtual);
+
+                        if (Segundos >= 129 && Segundos <= 139)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 146 && Segundos <= 153)
+                            //3 -
+                            MaosEsqDirEsticadas(quadroAtual);
+
+                        if(Segundos >= 153 && Segundos <= 158)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 164 && Segundos <= 168)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                        if(Segundos >= 168 && Segundos <= 175)
+                            //5 -
+                            MaosEsticadaEsqDir(quadroAtual);
+
+                        if(Segundos >= 178 && Segundos <= 189)
+                            //2 -
+                            MaoEsqDirAcima(quadroAtual);
+
+                    }
+                }
+            }
+        }
+
+        //1
+        private void MaosAbaixo(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cotoveloDireito = usuario.Joints[JointType.ElbowRight];
+                Joint cotoveloEsquerdo = usuario.Joints[JointType.ElbowLeft];
+
+
+                bool novoTesteMaosAbaixo = maoDireita.Position.Y < cotoveloDireito.Position.Y && maoEsquerda.Position.Y < cotoveloEsquerdo.Position.Y;
+
+                if (Testes != novoTesteMaosAbaixo)
+                {
+                    Testes = novoTesteMaosAbaixo;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+        }
+
+        //2
+        private void MaoEsqDirAcima(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cabeca = usuario.Joints[JointType.Head];
+
+                bool novoTesteMaoAcimaCabeca = maoDireita.Position.Y > cabeca.Position.Y || maoEsquerda.Position.Y > cabeca.Position.Y;
+
+                if (Testes != novoTesteMaoAcimaCabeca)
+                {
+                    Testes = novoTesteMaoAcimaCabeca;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+
+
+                    }
+                }
+            }
+
+        }
+
+        //3 
+        private void MaosEsqDirEsticadas(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint MaoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint cotoveloEsquerdo = usuario.Joints[JointType.ElbowLeft];
+                Joint cotoveloDireito = usuario.Joints[JointType.ElbowRight];
+                Joint quadril = usuario.Joints[JointType.HipCenter];
+
+                bool novoTesteMaosEsticada = maoDireita.Position.X > cotoveloDireito.Position.X && cotoveloEsquerdo.Position.X > MaoEsquerda.Position.X && MaoEsquerda.Position.Y > quadril.Position.Y && maoDireita.Position.Y > quadril.Position.Y;
+
+                if (Testes != novoTesteMaosEsticada)
+                {
+                    Testes = novoTesteMaosEsticada;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+        }
+        
+        //4
+        private void MaosEsticadaEsqDir(SkeletonFrame quadroAtual)
+        {
+            Skeleton[] esqueletos = new Skeleton[6];
+
+            quadroAtual.CopySkeletonDataTo(esqueletos);
+            Skeleton usuario = esqueletos.FirstOrDefault(esqueleto => esqueleto.TrackingState == SkeletonTrackingState.Tracked);
+
+            if (usuario != null)
+            {
+                Joint maoDireita = usuario.Joints[JointType.HandRight];
+                Joint maoEsquerda = usuario.Joints[JointType.HandLeft];
+                Joint Espinha = usuario.Joints[JointType.Spine];
+
+                bool novoTesteMaoDirEsticada = maoDireita.Position.X > Espinha.Position.X && maoEsquerda.Position.X > Espinha.Position.X || maoDireita.Position.X < Espinha.Position.X && maoEsquerda.Position.X < Espinha.Position.X;
+
+                if (Testes != novoTesteMaoDirEsticada)
+                {
+                    Testes = novoTesteMaoDirEsticada;
+                    if (Testes == true)
+                    {
+                        Pontos = Pontos + 100;
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+        }
 
 
         private void kinect_DepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
@@ -67,9 +288,7 @@ namespace Kinectinho.View.Dancas
         {
             esqueletobugado.Background = new ImageBrush(ObterImagemSensorRGB(e.OpenColorImageFrame()));
         }
-        /**
-       * Desenhar o esqueleto do usuário.
-       */
+
         private BitmapSource ObterImagemSensorRGB(ColorImageFrame quadro)
         {
             if (quadro == null) return null;
@@ -133,6 +352,8 @@ namespace Kinectinho.View.Dancas
                 Segundos++;
 
 
+
+
             }
 
 
@@ -142,6 +363,7 @@ namespace Kinectinho.View.Dancas
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {
+            Pontuacao.Pontos = Pontos;
             MessageBox.Show("A musica acabou");
 
             TelaPontos janela = new TelaPontos();
@@ -211,6 +433,23 @@ namespace Kinectinho.View.Dancas
             esp_bones_esqueleto.Y2 = j2P.Y;
 
         }
+        public static KinectSensor InicializarPrimeiroSensor()
+        {
+            KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
+            kinect.Start();
+            return kinect;
+        }
+
+
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
+        {
+            Video.Play();
+            timer.Start();
+            esqueletobugado.Visibility = Visibility.Visible;
+            btnIniciar.Visibility = Visibility.Hidden;
+            Borda.Visibility = Visibility.Visible;
+            Voltar.Visibility = Visibility.Hidden;
+        }
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
@@ -224,33 +463,10 @@ namespace Kinectinho.View.Dancas
 
         private void Parar_Executar()
         {
+            Pontuacao.Pontos = 0;
             Video.Stop();
             Video.Source = null;
             timer.Stop();
-        }
-
-        private void KinectEvent(object sender, SkeletonFrameReadyEventArgs e)
-        {
-            using (SkeletonFrame quadroAtual = e.OpenSkeletonFrame())
-            {
-                if (quadroAtual != null)
-                {
-                    if (Video.Source != null)
-                    {
-
-
-
-                    }
-                }
-            }
-        }
-
-        private void btnIniciar_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Video.Play();
-            timer.Start();
-            esqueletobugado.Visibility = Visibility.Visible;
-            btnIniciar.Visibility = Visibility.Hidden;
         }
 
 
