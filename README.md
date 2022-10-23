@@ -1,6 +1,7 @@
 # Kinect_WPF
 
 ## Requirements:
+- ### Videos because git doesn't accept - https://drive.google.com/drive/folders/1ZNOpauKSihtAWxga4Ke8SfM0D1zWD0wC?usp=sharing
 - ### SDKs Kinect: https://www.microsoft.com/en-us/download/details.aspx?id=40278
 - ### Computer adapter/Font Kinect. Example: <br> 
 <img src="https://user-images.githubusercontent.com/72676389/195720325-751308e6-fe3d-4c2a-85a8-c5e158647e1e.png" height="350">
