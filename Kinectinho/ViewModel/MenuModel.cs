@@ -15,16 +15,17 @@ namespace Kinectinho.ViewModel
             public MenuModel()
             {
                 DancasDAB = new System.Collections.ObjectModel.ObservableCollection<Model.Danca>();
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança da Mãozinha", ImageSource = "Dancas/Imagens/mao.jpg", Carroussel = 1 });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 2", ImageSource = "Dancas/Imagens/psy.jpg", Carroussel = 2 });
-                DancasDAB.Add(new Model.Danca() { Nome = "Dança 3", ImageSource = "Dancas/Imagens/dinamite.jpg", Carroussel = 3 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Ariana Grande - 35 + 34", ImageSource = "Dancas/Imagens/69.jpg", Carroussel = 1 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Kim Petras - Coconuts", ImageSource = "Dancas/Imagens/coconuts.jpg", Carroussel = 2 });
+                DancasDAB.Add(new Model.Danca() { Nome = "K/DA - POP/STARS", ImageSource = "Dancas/Imagens/KDA.jpg", Carroussel = 3 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Dua Lipa - New Rules", ImageSource = "Dancas/Imagens/rules.jpg", Carroussel = 4 });
 
 
                 SelectedDancaDAB = DancasDAB[0];
             }
 
 
-        private System.Collections.ObjectModel.ObservableCollection<Model.Danca> _dancasDAB;
+            private System.Collections.ObjectModel.ObservableCollection<Model.Danca> _dancasDAB;
             public System.Collections.ObjectModel.ObservableCollection<Model.Danca> DancasDAB
             {
                 get

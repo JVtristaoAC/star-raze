@@ -157,15 +157,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="View\Dancas\Imagens\dinamite.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="View\Dancas\Imagens\mao.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="View\Dancas\Imagens\psy.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="View\Dancas\Imagens\rules.jpg" />
+    <Resource Include="View\Dancas\Imagens\nome.jpeg" />
+    <Resource Include="View\Dancas\Imagens\69.jpg" />
+    <Resource Include="View\Dancas\Imagens\coconuts.jpg" />
+    <Resource Include="View\Dancas\Imagens\KDA.jpg" />
     <Resource Include="View\Dancas\Imagens\Seta_Direita.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -180,7 +176,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Dancas\Imagens\icone.png" />
-    <Content Include="View\Dancas\Musicas\DançaGatinho.wav" />
     <Resource Include="View\Dancas\Imagens\Ferramentas.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

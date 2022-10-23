@@ -19,18 +19,46 @@
                 <VisualBrush.Visual>
 
                     <Image x:Name="Fundo"
-                           gif:AnimationBehavior.SourceUri="Imagens\TelaOculos.jpg"
+                           gif:AnimationBehavior.SourceUri="Imagens\TelaMao.jpg"
                            gif:AnimationBehavior.AutoStart="True"
                            />
 
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
-        
-        <Label Content="Danca 2"/>
-        <Button Content="Voltar ao Menu de selação" x:Name="Voltar" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="48" Width="264" FontSize="20"  Background="Transparent" BorderBrush="Transparent" Click="Voltar_Click"/>
-        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
-                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="360"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="Video" LoadedBehavior="Manual" UnloadedBehavior="Manual"/>
+        <Border BorderBrush="Purple" BorderThickness="10" CornerRadius="2" Width="210" Height="170">
+            <Canvas Name="esqueletobugado" 
+                HorizontalAlignment="Center" 
+                Grid.Column="0" Grid.Row="0"
+                Width="200" Height="160"
+                Visibility="Hidden"
+                />
+        </Border>
+
+
+        <StackPanel HorizontalAlignment="Right" Height="249" VerticalAlignment="Top" Width="174" Grid.Column="2">
+            <Label x:Name="lblMaoDireita" Visibility="Hidden" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
+            <Label x:Name="lblMaoEsquerda"  Visibility="Hidden" Content="Mão Esquerda Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
+            <Label x:Name="lblMaoDireitaEsquerda" Visibility="Hidden" Content="Mão Direita pra Esquerda" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
+            <Label x:Name="lblMaoEsquerdaDireita"  Visibility="Hidden" Content="Mão Esquerda pra Direita" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
+        </StackPanel>
+
+        <Label Content="X" x:Name="Voltar" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}" Grid.Column="2"/>
+        <Label x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click"
+                Style="{StaticResource Btn_Retro}"/>
+
     </Grid>
 </Window>

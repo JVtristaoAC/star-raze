@@ -118,6 +118,12 @@ namespace Kinectinho.View
                         this.Close();
                         break;
 
+                    case 4:
+                        //Dancas.Danca4 janela4 = new Dancas.Danca4();
+                        //janela4.Show();
+                        this.Close();
+                        break;
+
                 }
             }
             catch

@@ -12,7 +12,8 @@
         Loaded="Window_Loaded"
         Background="Purple"
         WindowStyle="None"
-        Icon="Imagens/icone.png">
+        Icon="Imagens/icone.png"
+        AllowDrop="True">
     <Grid>
         <Grid.Background>
             <VisualBrush>
@@ -38,13 +39,17 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Canvas Name="esqueletobugado" 
+        <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="Video" LoadedBehavior="Manual" UnloadedBehavior="Manual"/>
+        <Border BorderBrush="Purple" BorderThickness="5" CornerRadius="2" Width="205" Height="165">
+            <Canvas Name="esqueletobugado" 
                 HorizontalAlignment="Center" 
-                Grid.Column="1" Grid.Row="1"
-                Width="640" Height="360"
+                Grid.Column="0" Grid.Row="0"
+                Width="200" Height="160"
                 Visibility="Hidden"
-                Opacity="0.8"/>
+                />
+        </Border>
         
+
         <StackPanel HorizontalAlignment="Right" Height="249" VerticalAlignment="Top" Width="174" Grid.Column="2">
             <Label x:Name="lblMaoDireita" Visibility="Hidden" Content="Mão Direita Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
             <Label x:Name="lblMaoEsquerda"  Visibility="Hidden" Content="Mão Esquerda Pra Cima" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
@@ -52,14 +57,9 @@
             <Label x:Name="lblMaoEsquerdaDireita"  Visibility="Hidden" Content="Mão Esquerda pra Direita" HorizontalAlignment="Center" Background="#FFE60C0C" Margin="10,0" Width="147"/>
         </StackPanel>
 
-        <Label Content="Voltar ao menu" x:Name="Voltar" FontSize="30" Grid.Row="2" Grid.ColumnSpan="1" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}"/>
+        <Label Content="X" x:Name="Voltar" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" PreviewMouseDown="Voltar_Click" Style="{StaticResource Btn_Retro}" Grid.Column="2"/>
         <Label x:Name="btnIniciar" Content="Iniciar" Grid.Column="1" Grid.Row="1" FontSize="50" PreviewMouseDown="btnIniciar_Click"
                 Style="{StaticResource Btn_Retro}"/>
-        
-        <Label Content="X" x:Name="X" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="50"  HorizontalAlignment="Right" VerticalAlignment="Top"       
-                PreviewMouseDown="Sair_Click" Style="{StaticResource Btn_Retro}" Cursor="Hand" />
-        
-        <Label Content="-" x:Name="Min" Grid.RowSpan="10" Grid.ColumnSpan="10" FontSize="100"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-30,50,0"      
-                PreviewMouseDown="Minimizar_Click"  Style="{StaticResource Btn_Retro}" Cursor="Hand" />
+
     </Grid>
 </Window>
