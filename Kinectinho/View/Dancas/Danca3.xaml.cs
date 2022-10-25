@@ -340,7 +340,7 @@ namespace Kinectinho.View.Dancas
             Video.Source = new Uri(System.Environment.CurrentDirectory + "/resources/Musicas/KDA.mp4");
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += Timer_Tick;
-
+            Pontuacao.Danca = 3;
 
         }
 
@@ -364,7 +364,7 @@ namespace Kinectinho.View.Dancas
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {
             Pontuacao.Pontos = Pontos;
-            MessageBox.Show("A musica acabou");
+            //MessageBox.Show("A musica acabou");
 
             TelaPontos janela = new TelaPontos();
             janela.Show();

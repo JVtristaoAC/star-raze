@@ -210,6 +210,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\resources\Musicas\69.mp4" />
+    <Content Include="bin\Debug\resources\Musicas\amogus.mp4" />
+    <Resource Include="View\Dancas\Imagens\amogus.png" />
     <Resource Include="View\Dancas\Imagens\Pontos.jpg" />
     <Resource Include="View\Dancas\Imagens\Pontos.jpeg" />
   </ItemGroup>

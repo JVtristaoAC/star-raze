@@ -39,10 +39,35 @@ namespace Kinectinho.View
 
         private void btnRepetir_Click(object sender, RoutedEventArgs e)
         {
+            switch (Pontuacao.Danca)
+            {
+                case 1:
+                    Dancas.Danca1 janela = new Dancas.Danca1();
+                    janela.Show();
+                    this.Close();
+                    break;
+                case 2:
+                    Dancas.Danca2 janela2 = new Dancas.Danca2();
+                    janela2.Show();
+                    this.Close();
+                    break;
+                case 3:
+                    Dancas.Danca3 janela3 = new Dancas.Danca3();
+                    janela3.Show();
+                    this.Close();
+                    break;
+
+                case 4:
+                    Dancas.Danca4 janela4 = new Dancas.Danca4();
+                    janela4.Show();
+                    this.Close();
+                    break;
+
+              
+            }
+            
             Pontuacao.Pontos = 0;
-            Dancas.Danca1 janela = new Dancas.Danca1();
-            janela.Show();
-            this.Close();
+           
         }
 
         private void btnEscolha_Click(object sender, RoutedEventArgs e)

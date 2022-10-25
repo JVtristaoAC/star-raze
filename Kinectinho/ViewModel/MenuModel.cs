@@ -18,7 +18,7 @@ namespace Kinectinho.ViewModel
                 DancasDAB.Add(new Model.Danca() { Nome = "Ariana Grande - 35 + 34", ImageSource = "Dancas/Imagens/69.jpg", Carroussel = 1 });
                 DancasDAB.Add(new Model.Danca() { Nome = "Kim Petras - Coconuts", ImageSource = "Dancas/Imagens/coconuts.jpg", Carroussel = 2 });
                 DancasDAB.Add(new Model.Danca() { Nome = "K/DA - POP/STARS", ImageSource = "Dancas/Imagens/KDA.jpg", Carroussel = 3 });
-                //DancasDAB.Add(new Model.Danca() { Nome = "Moodai - Among Us Remix", ImageSource = "Dancas/Imagens/amogus.jpg", Carroussel = 4 });
+                DancasDAB.Add(new Model.Danca() { Nome = "Moodai - Among Us Remix", ImageSource = "Dancas/Imagens/amogus.png", Carroussel = 4 });
 
 
                 SelectedDancaDAB = DancasDAB[0];
