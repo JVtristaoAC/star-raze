@@ -1,4 +1,7 @@
-# Kinect_WPF
+# Star Raze
+
+![STAR RAZE](https://user-images.githubusercontent.com/72676389/198158888-6c0b88b9-e5b2-4750-9098-889cb45ed0fe.png)
+
 
 ## Requirements:
 - ### Videos because git doesn't accept: https://drive.google.com/drive/folders/1ZNOpauKSihtAWxga4Ke8SfM0D1zWD0wC?usp=sharing
