@@ -7,8 +7,6 @@
 
 # How to Run:
 ## Requirements
-- Videos because git doesn't accept: https://drive.google.com/drive/folders/1ZNOpauKSihtAWxga4Ke8SfM0D1zWD0wC?usp=sharing
-- SDKs Kinect: https://www.microsoft.com/en-us/download/details.aspx?id=40278
 - Computer adapter/Font Kinect. Example:
 <img src="https://user-images.githubusercontent.com/72676389/195720325-751308e6-fe3d-4c2a-85a8-c5e158647e1e.png" height="150">
 
@@ -16,10 +14,11 @@
 <img src="https://user-images.githubusercontent.com/72676389/195720438-4e1ecebb-47ea-4775-8624-0c9fc92e779d.png" height="150">
 
 ## Tutorial:
-1) Install all the SDKs
+1) Install all the [Videos](https://drive.google.com/drive/folders/1ZNOpauKSihtAWxga4Ke8SfM0D1zWD0wC?usp=sharing)
+2) install the [SDKs](https://www.microsoft.com/en-us/download/details.aspx?id=40278)
 2) Put the videos on Kinectinho>bin>Debug>resources>Musicas
 3) connect the kinect with the adapter/font
-4) run, and have fun !!!
+4) run, and enjoy !!!
 
 
 
