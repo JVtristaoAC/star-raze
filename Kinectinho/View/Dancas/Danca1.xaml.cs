@@ -44,9 +44,11 @@ namespace Kinectinho.View.Dancas
       
         public static KinectSensor InicializarPrimeiroSensor()
         {
+            
             KinectSensor kinect = KinectSensor.KinectSensors.First(sensor => sensor.Status == KinectStatus.Connected);
             kinect.Start();
             return kinect;
+            
         }
 
         private void InicializarSensor()
@@ -154,6 +156,7 @@ namespace Kinectinho.View.Dancas
 
             TelaPontos janela = new TelaPontos();
             janela.Show();
+            kinect.Dispose();
             this.Close();
         }
 

@@ -30,10 +30,9 @@ namespace Kinectinho.View
         /**
          * Rastreamento do Esqueleto
          */
-        byte[] info_cores_sensor_kinect = null;
-        WriteableBitmap bmp_rgb_cores = null;
+       
 
-        public BitmapPalette Cor = new BitmapPalette(new List<Color> { Colors.Red });
+       
         public TelaFerramentas()
         {
             InitializeComponent();
@@ -127,7 +126,7 @@ namespace Kinectinho.View
                         bytesImagem[indice + 2] = maiorValorCor;
                     }
 
-                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, Cor, bytesImagem, quadro.Width * quadro.BytesPerPixel);
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr555, null, bytesImagem, quadro.Width * quadro.BytesPerPixel);
             }
         }
 
@@ -172,6 +171,7 @@ namespace Kinectinho.View
             MainWindow janela = new MainWindow();
             janela.Show();
             this.Close();
+            kinect.Dispose();
         }
 
 

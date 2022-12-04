@@ -369,6 +369,7 @@ namespace Kinectinho.View.Dancas
             TelaPontos janela = new TelaPontos();
             janela.Show();
             this.Close();
+            kinect.Dispose();
         }
 
         void SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
