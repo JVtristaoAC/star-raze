@@ -149,7 +149,7 @@ namespace Kinectinho.View
                         bytesImagem[indice + 1] = 255;
                     }
                 }
-                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr32, null , bytesImagem, quadro.Width * 4);
+                return BitmapSource.Create(quadro.Width, quadro.Height, 960, 960, PixelFormats.Bgr101010, null , bytesImagem, quadro.Width * 4);
             }
         }
 
